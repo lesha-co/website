@@ -4,7 +4,7 @@ const cv: CV = {
     title: "Frontend Developer",
     email: "hi@lesha.co",
     website: "https://lesha.co/",
-    photo: "/me.jpeg",
+    photo: "/me2.jpg",
   },
   hero: {
     h1: "I build web applications",
