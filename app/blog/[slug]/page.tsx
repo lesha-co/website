@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { getPostBySlug, getAllSlugs } from '@/lib/blog';
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { getPostBySlug, getAllSlugs } from "@/lib/blog";
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -18,10 +18,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: BlogPostPageProps) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
-  
+
   if (!post) {
     return {
-      title: 'Post Not Found',
+      title: "Post Not Found",
     };
   }
 
@@ -72,11 +72,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {post.category}
           </span>
         </div>
-        
+
         <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">
           {post.title}
         </h1>
-        
+
         <p className="text-xl text-gray-600 leading-relaxed">
           {post.description}
         </p>
@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <div
           dangerouslySetInnerHTML={{ __html: post.content }}
           className="
-            prose-headings:text-gray-900 
+            prose-headings:text-gray-900
             prose-h1:text-3xl prose-h1:font-bold prose-h1:mb-6 prose-h1:mt-8
             prose-h2:text-2xl prose-h2:font-semibold prose-h2:mb-4 prose-h2:mt-8
             prose-h3:text-xl prose-h3:font-medium prose-h3:mb-3 prose-h3:mt-6
