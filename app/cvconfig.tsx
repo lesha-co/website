@@ -26,6 +26,7 @@ const cv: CV = {
         "Three.JS",
         "Sass",
         "LESS",
+        "PostCSS",
         "Highcharts.js",
         "HTML Emails",
         "Zod",
@@ -35,6 +36,9 @@ const cv: CV = {
         "ESBuild",
         "TypeScript",
         "JavaScript",
+        "React Router",
+        "SEO",
+        "JWT",
       ],
     },
     {
@@ -47,14 +51,15 @@ const cv: CV = {
         "SQLite",
         "PostgreSQL",
         "Python",
+        "Amazon S3",
       ],
     },
 
     {
       sectionName: "DevOps",
-      skills: ["Nginx", "Docker", "GitLab CI", "Git", "Linux"],
+      skills: ["Nginx", "Docker", "GitLab CI", "Git", "Linux", "Sentry"],
     },
-    { sectionName: "Testing", skills: ["Jest", "Mocha"] },
+    { sectionName: "Testing", skills: ["Jest", "Mocha", "Puppeteer"] },
   ],
 
   jobs: [
@@ -138,6 +143,6 @@ export default cv;
 
 /**
  * Extra skills
- * Ant Design, React Router, SEO, JWT, sentry,
- *PostCSS, Amazon S3, Bitbucket, Puppeteer, Figma, GitHub, Jira, Postman, VS Code
+ * Ant Design, ,
+ *, , Bitbucket, Figma, GitHub, Jira, Postman, VS Code
  */
