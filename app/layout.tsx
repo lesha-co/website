@@ -25,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="darkreader-lock" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
