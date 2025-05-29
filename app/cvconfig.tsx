@@ -135,3 +135,9 @@ const cv: CV = {
   ],
 };
 export default cv;
+
+/**
+ * Extra skills
+ * Ant Design, React Router, SEO, JWT, sentry,
+ *PostCSS, Amazon S3, Bitbucket, Puppeteer, Figma, GitHub, Jira, Postman, VS Code
+ */

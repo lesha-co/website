@@ -8,8 +8,9 @@ import { Education } from "./ui-cv/Education";
 import { HelloBlock } from "./ui-cv/HelloBlock";
 import { SkillSet } from "./ui-cv/SkillSet";
 import { Languages } from "./ui-cv/Languages";
-import { ThemeToggle } from "./components/theme-toggle";
+import { ThemeToggle } from "./ui/theme-toggle";
 import { Contacts } from "./ui-cv/Contacts";
+import { DownloadCVButton } from "./ui-cv/DownloadCVButton";
 
 const H2 = ({ children }: { children: React.ReactNode }) => (
   <div className="font-bold text-3xl mt-16 mb-3">
@@ -26,6 +27,10 @@ const SidebarSection = ({
 }) => {
   return <div className={clsx("px-8 w-full", className)}>{children}</div>;
 };
+
+const OnlyMobile = ({ children }: { children: React.ReactNode }) => (
+  <div className="lg:hidden">{children}</div>
+);
 
 export default async function Home() {
   return (
@@ -57,31 +62,40 @@ export default async function Home() {
         <SidebarSection className="not-lg:hidden">
           <Contacts />
         </SidebarSection>
+
+        <SidebarSection className="not-lg:hidden">
+          <DownloadCVButton />
+        </SidebarSection>
         <SidebarSection className="not-lg:hidden">
           <span className="font-bold text-xl">
             <h3>Languages</h3>
           </span>
           <Languages />
         </SidebarSection>
-        <div className="flex-grow"></div>
-        <SidebarSection className="flex justify-center mb-4">
+
+        <SidebarSection className="flex flex-col justify-end items-center  flex-grow">
           <ThemeToggle />
         </SidebarSection>
       </div>
-      <HelloBlock className="[grid-area:hello] lg:pt-12" />
+      <HelloBlock className="[grid-area:hello] pt-12" />
       <div className="[grid-area:main] pb-12">
-        <div className="lg:hidden">
+        <OnlyMobile>
+          <div className="mt-6 mb-6">
+            <DownloadCVButton />
+          </div>
+        </OnlyMobile>
+        <OnlyMobile>
           <H2>Contacts</H2>
           <Contacts />
-        </div>
+        </OnlyMobile>
         <H2>Recent experience</H2>
         <Experience />
         <H2>Education</H2>
         <Education />
-        <div className="lg:hidden">
+        <OnlyMobile>
           <H2>Languages</H2>
           <Languages />
-        </div>
+        </OnlyMobile>
         <H2>Skills</H2>
         <SkillSet />
       </div>

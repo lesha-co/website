@@ -5,7 +5,10 @@
     --light-foreground: #0a0a0a;
     --light-primary: #18181b;
     --light-secondary: theme(--color-slate-200);
-    --light-accent: theme(--color-blue-500);
+    --light-accent: theme(--color-blue-700);
+    --light-button-background: theme(--color-slate-500);
+    --light-button-foreground: var(--color-slate-50);
+    --light-button-hover-background: theme(--color-slate-600);
     --light-skill-background: theme(--color-blue-100);
     --light-skill-foreground: theme(--color-blue-500);
 
@@ -14,6 +17,9 @@
     --dark-primary: #fafafa;
     --dark-secondary: theme(--color-slate-800);
     --dark-accent: theme(--color-blue-300);
+    --dark-button-background: theme(--color-slate-600);
+    --dark-button-foreground: var(--color-slate-50);
+    --dark-button-hover-background: theme(--color-slate-500);
     --dark-skill-background: theme(--color-blue-950);
     --dark-skill-foreground: var(--dark-accent);
 
@@ -23,6 +29,9 @@
     --primary: var(--light-primary);
     --secondary: var(--light-secondary);
     --accent: var(--light-accent);
+    --button-background: var(--light-button-background);
+    --button-foreground: var(--light-button-foreground);
+    --button-hover-background: var(--light-button-hover-background);
     --skill-background: var(--light-skill-background);
     --skill-foreground: var(--light-skill-foreground);
 }
@@ -35,6 +44,9 @@
         --primary: var(--dark-primary);
         --secondary: var(--dark-secondary);
         --accent: var(--dark-accent);
+        --button-background: var(--dark-button-background);
+        --button-foreground: var(--dark-button-foreground);
+        --button-hover-background: var(--dark-button-hover-background);
         --skill-background: var(--dark-skill-background);
         --skill-foreground: var(--dark-skill-foreground);
     }
@@ -46,6 +58,9 @@
     --color-primary: var(--primary);
     --color-secondary: var(--secondary);
     --color-accent: var(--accent);
+    --color-button-background: var(--button-background);
+    --color-button-foreground: var(--button-foreground);
+    --color-button-hover-background: var(--button-hover-background);
     --color-skill-background: var(--skill-background);
     --color-skill-foreground: var(--skill-foreground);
 }
@@ -57,6 +72,9 @@
     --primary: var(--light-primary);
     --secondary: var(--light-secondary);
     --accent: var(--light-accent);
+    --button-background: var(--light-button-background);
+    --button-foreground: var(--light-button-foreground);
+    --button-hover-background: var(--light-button-hover-background);
     --skill-background: var(--light-skill-background);
     --skill-foreground: var(--light-skill-foreground);
 }
@@ -67,6 +85,9 @@
     --primary: var(--dark-primary);
     --secondary: var(--dark-secondary);
     --accent: var(--dark-accent);
+    --button-background: var(--dark-button-background);
+    --button-foreground: var(--dark-button-foreground);
+    --button-hover-background: var(--dark-button-hover-background);
     --skill-background: var(--dark-skill-background);
     --skill-foreground: var(--dark-skill-foreground);
 }
@@ -77,11 +98,11 @@ body {
         color 0.3s ease;
 }
 
-a {
+a:not(.button) {
     color: var(--color-accent);
     text-decoration: none;
 }
 
-a:hover {
+a:not(.button):hover {
     text-decoration: underline;
 }
