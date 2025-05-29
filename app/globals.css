@@ -1,34 +1,87 @@
 @import "tailwindcss";
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
-    --blue: #007bff;
-}
+    --light-background: theme(--color-stone-50);
+    --light-foreground: #0a0a0a;
+    --light-primary: #18181b;
+    --light-secondary: #f4f4f5;
+    --light-accent: theme(--color-blue-500);
+    --light-skill-background: theme(--color-blue-100);
+    --light-skill-foreground: theme(--color-blue-500);
 
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
+    --dark-background: theme(--color-stone-950);
+    --dark-foreground: #fafafa;
+    --dark-primary: #fafafa;
+    --dark-secondary: #27272a;
+    --dark-accent: theme(--color-blue-500);
+    --dark-skill-background: theme(--color-blue-950);
+    --dark-skill-foreground: var(--dark-accent);
+
+    /* Light theme colors */
+    --background: var(--light-background);
+    --foreground: var(--light-foreground);
+    --primary: var(--light-primary);
+    --secondary: var(--light-secondary);
+    --accent: var(--light-accent);
+    --skill-background: var(--light-skill-background);
+    --skill-foreground: var(--light-skill-foreground);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
+        /* Dark theme colors */
+        --background: var(--dark-background);
+        --foreground: var(--dark-foreground);
+        --primary: var(--dark-primary);
+        --secondary: var(--dark-secondary);
+        --accent: var(--dark-accent);
+        --skill-background: var(--dark-skill-background);
+        --skill-foreground: var(--dark-skill-foreground);
     }
+}
+
+@theme {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-accent: var(--accent);
+    --color-skill-background: var(--skill-background);
+    --color-skill-foreground: var(--skill-foreground);
+}
+
+/* Manual theme toggle support */
+[data-theme="light"] {
+    --background: var(--light-background);
+    --foreground: var(--light-foreground);
+    --primary: var(--light-primary);
+    --secondary: var(--light-secondary);
+    --accent: var(--light-accent);
+    --skill-background: var(--light-skill-background);
+    --skill-foreground: var(--light-skill-foreground);
+}
+
+[data-theme="dark"] {
+    --background: var(--dark-background);
+    --foreground: var(--dark-foreground);
+    --primary: var(--dark-primary);
+    --secondary: var(--dark-secondary);
+    --accent: var(--dark-accent);
+    --skill-background: var(--dark-skill-background);
+    --skill-foreground: var(--dark-skill-foreground);
 }
 
 body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 a {
-    color: var(--color-blue-500);
-    &:hover {
-        text-decoration: underline;
-    }
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }

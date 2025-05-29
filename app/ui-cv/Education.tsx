@@ -1,10 +1,11 @@
 import { Title } from "./Title";
 import { Years } from "./Years";
+import cv from "../cvconfig";
 
-export const Education = (props: { schools: Education[] }) => {
+export const Education = () => {
   return (
     <div className="flex flex-col gap-4">
-      {props.schools.map((edu) => (
+      {cv.education.map((edu) => (
         <div key={edu.school}>
           <Years>{edu.years}</Years>
           <h3>

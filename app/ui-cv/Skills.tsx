@@ -3,7 +3,7 @@ export const Skills = ({ skills }: { skills: string[] }) => {
     <ul className="flex flex-wrap gap-2">
       {skills.map((skill) => (
         <li
-          className="bg-blue-100 text-blue-500 rounded-sm px-2 py-1"
+          className="bg-skill-background text-skill-foreground rounded-sm px-2 py-1"
           key={skill}
         >
           {skill}

@@ -25,12 +25,22 @@ type CV = {
     title: string;
     email: string;
     website: string;
+    linkedin: string;
+    github: string;
+    telegram: string;
   };
   hero: {
     h1: string;
     subtext: string;
   };
-  skills: { sectionName: string; skills: string[]; wide?: bollean }[];
+  skills: { sectionName: string; skills: string[]; wide?: boolean }[];
   languages: Language[];
   education: Education[];
 };
+
+type LocalizedString =
+  | {
+      en: string;
+      ru: string;
+    }
+  | string;

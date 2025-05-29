@@ -4,6 +4,9 @@ const cv: CV = {
     title: "Frontend Developer",
     email: "hi@lesha.co",
     website: "https://lesha.co/",
+    telegram: "leshaco",
+    github: "lesha-co",
+    linkedin: "lesha-co",
     photo: "/me3.jpg",
   },
   hero: {
@@ -38,14 +41,14 @@ const cv: CV = {
         "Node.JS",
         "Django",
         "Express",
-        "OpenAPI/Swagger",
+        "OpenAPI",
         "SQLite",
         "PostgreSQL",
       ],
     },
     {
       sectionName: "Languages",
-      skills: ["TypeScript", "ES2022", "Python", "(a bit of) C++"],
+      skills: ["TypeScript", "JavaScript", "Python", "(a bit of) C++"],
     },
     { sectionName: "Testing", skills: ["Jest", "Mocha"] },
 
@@ -125,7 +128,7 @@ const cv: CV = {
   ],
   education: [
     {
-      degree: "Bachelor of Science in Computer Science",
+      degree: "B.S. in Computer Science",
       school:
         "Russian State Agrarian University - Moscow Timiryazev Agricultural Academy",
       years: "2020 – 2025",
