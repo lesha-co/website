@@ -1,6 +1,5 @@
 "use client";
 import clsx from "clsx";
-import { setTimeout } from "node:timers";
 import { useEffect, useState } from "react";
 
 const Skill = ({ skill }: { skill: string }) => {
