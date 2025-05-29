@@ -4,16 +4,16 @@
     --light-background: theme(--color-stone-50);
     --light-foreground: #0a0a0a;
     --light-primary: #18181b;
-    --light-secondary: #f4f4f5;
+    --light-secondary: theme(--color-slate-200);
     --light-accent: theme(--color-blue-500);
     --light-skill-background: theme(--color-blue-100);
     --light-skill-foreground: theme(--color-blue-500);
 
-    --dark-background: theme(--color-stone-950);
+    --dark-background: theme(--color-slate-900);
     --dark-foreground: #fafafa;
     --dark-primary: #fafafa;
-    --dark-secondary: #27272a;
-    --dark-accent: theme(--color-blue-500);
+    --dark-secondary: theme(--color-slate-800);
+    --dark-accent: theme(--color-blue-300);
     --dark-skill-background: theme(--color-blue-950);
     --dark-skill-foreground: var(--dark-accent);
 

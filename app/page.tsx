@@ -12,7 +12,7 @@ import { ThemeToggle } from "./components/theme-toggle";
 import { Contacts } from "./ui-cv/Contacts";
 
 const H2 = ({ children }: { children: React.ReactNode }) => (
-  <div className="font-bold text-3xl mt-6 mb-3">
+  <div className="font-bold text-3xl mt-16 mb-3">
     <h2>{children}</h2>
   </div>
 );
@@ -22,7 +22,7 @@ export default async function Home() {
     <div
       className={clsx(
         "px-8",
-        "max-w-6xl min-h-screen mx-auto grid gap-x-20",
+        "max-w-5xl min-h-screen mx-auto grid gap-x-20",
         "lg:grid-cols-3 lg:[grid-template-areas:_'hello_hello_header''main_main_header']",
         "grid-cols-1 [grid-template-areas:_'hello''header''main']",
       )}
@@ -39,6 +39,11 @@ export default async function Home() {
           />
           <p className="text-xl">That's me.</p>
         </div>
+
+        <div className="px-8 w-full">
+          <p>Current location: Belgrade, Serbia</p>
+          <p>Nationality: Russian</p>
+        </div>
         <div className="px-8 w-full">
           <span className="font-bold text-xl">
             <h3>Contacts</h3>
@@ -47,6 +52,12 @@ export default async function Home() {
           {/* <span className="font-bold text-xl">
             <h3>download pdf</h3>
           </span> */}
+        </div>
+        <div className="px-8 w-full">
+          <span className="font-bold text-xl">
+            <h3>Languages</h3>
+          </span>
+          <Languages />
         </div>
         <div className="flex-grow"></div>
         <div className="w-full flex justify-center  px-8 mb-4">
@@ -61,8 +72,6 @@ export default async function Home() {
         <Education />
         <H2>Skills</H2>
         <SkillSet />
-        <H2>Languages (human)</H2>
-        <Languages />
       </div>
     </div>
   );

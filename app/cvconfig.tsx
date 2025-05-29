@@ -12,7 +12,7 @@ const cv: CV = {
   hero: {
     h1: "I build web applications",
     subtext:
-      "Frontend developer at MY.Games. Expert in web development. Skilled in React, Next.js, and a variety of web technologies.",
+      "Frontend developer at MY.Games. Expert in web development. Skilled in React, Next.js, and a variety of web technologies with over 10 years of experience in commercial development.",
   },
   skills: [
     {
@@ -33,6 +33,8 @@ const cv: CV = {
         "Vite",
         "Webpack",
         "ESBuild",
+        "TypeScript",
+        "JavaScript",
       ],
     },
     {
@@ -44,18 +46,15 @@ const cv: CV = {
         "OpenAPI",
         "SQLite",
         "PostgreSQL",
+        "Python",
       ],
     },
-    {
-      sectionName: "Languages",
-      skills: ["TypeScript", "JavaScript", "Python", "(a bit of) C++"],
-    },
-    { sectionName: "Testing", skills: ["Jest", "Mocha"] },
 
     {
       sectionName: "DevOps",
       skills: ["Nginx", "Docker", "GitLab CI", "Git", "Linux"],
     },
+    { sectionName: "Testing", skills: ["Jest", "Mocha"] },
   ],
 
   jobs: [

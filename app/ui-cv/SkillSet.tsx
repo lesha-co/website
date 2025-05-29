@@ -8,9 +8,9 @@ export const SkillSet = () => {
       {cv.skills.map((skill) => (
         <div
           key={skill.sectionName}
-          className={clsx({ "lg:col-span-2": skill.wide })}
+          className={clsx({ "lg:col-span-3": skill.wide })}
         >
-          <div className="font-bold text-2xl mb-2">
+          <div className="font-bold text-xl mb-2">
             <h3>{skill.sectionName}</h3>
           </div>
           <Skills skills={skill.skills} />
