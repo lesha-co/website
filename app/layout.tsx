@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import cv from "./cvconfig";
+import { DocumentThemeSelectorScript } from "./ui/DocumentThemeSelectorScript";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Blog",
-  description: "A blog about web development, programming, and technology",
+  title: cv.personal.name,
+  description: cv.hero.subtext,
 };
 
 export default function RootLayout({
@@ -26,18 +28,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="darkreader-lock" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                const theme = localStorage.getItem('theme');
-                if (theme && theme !== 'system') {
-                  document.documentElement.setAttribute('data-theme', theme);
-                }
-              } catch (e) {}
-            `,
-          }}
-        />
+        <DocumentThemeSelectorScript />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}

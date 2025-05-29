@@ -4,6 +4,9 @@ import cv from "../cvconfig";
 export const Contacts = () => {
   return (
     <div>
+      <span className="font-bold text-xl">
+        <h3>Contacts</h3>
+      </span>
       <p>
         Website:{" "}
         <Link href={cv.personal.website}>

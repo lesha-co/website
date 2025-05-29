@@ -5,9 +5,9 @@ import cv from "../cvconfig";
 
 export const Experience = () => {
   return (
-    <div className="flex flex-col gap-8">
+    <ul className="flex flex-col gap-8">
       {cv.jobs.map((job, index) => (
-        <div key={index}>
+        <li key={index}>
           <Years>{job.years}</Years>
           <div>
             <div className="text-xl mb-2">
@@ -21,8 +21,8 @@ export const Experience = () => {
               {job.experience}
             </div>
           </div>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
