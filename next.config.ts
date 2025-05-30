@@ -15,9 +15,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-
-  // Optimize for edge deployment
-  output: "standalone",
 };
 
 export default nextConfig;

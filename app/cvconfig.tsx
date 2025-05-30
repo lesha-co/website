@@ -8,6 +8,7 @@ const cv: CV = {
     github: "lesha-co",
     linkedin: "lesha-co",
     photo: "/me3.jpg",
+    photoPdf: "/me3-small.jpg",
   },
   hero: {
     h1: "I build web applications",

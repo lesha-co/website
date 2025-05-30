@@ -22,6 +22,7 @@ type CV = {
   personal: {
     name: string;
     photo: string;
+    photoPdf: string;
     title: string;
     email: string;
     website: string;

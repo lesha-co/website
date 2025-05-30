@@ -4,10 +4,12 @@ import {
   Page,
   Text,
   View,
+  Image,
   StyleSheet,
   Link,
 } from "@react-pdf/renderer";
 import cv from "../cvconfig";
+import { wrap } from "trough";
 
 const styles = StyleSheet.create({
   page: {
@@ -156,100 +158,119 @@ const extractTextFromReactNode = (node: React.ReactNode): string => {
   return "";
 };
 
-export const CVPdf: React.FC = () => (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      {/* Header */}
-      <View style={styles.header}>
+const Hero: React.FC<{ photo: string | null }> = ({ photo }) => {
+  return (
+    <View style={{ flexDirection: "row", gap: 20, alignItems: "flex-start" }}>
+      <View style={{ flex: 1 }}>
         <Text style={styles.name}>{cv.personal.name}</Text>
         <Text style={styles.title}>{cv.personal.title}</Text>
         <Text style={styles.subtitle}>{cv.hero.subtext}</Text>
-        <View style={styles.contactInfo}>
-          <View style={styles.contactInfoSection}>
-            <Text>Email:</Text>
-            <Link src={`mailto:${cv.personal.email}`}>
-              <Text>{cv.personal.email}</Text>
-            </Link>
-          </View>
+      </View>
 
-          <View style={styles.contactInfoSection}>
-            <Text>Website:</Text>
-            <Link src={cv.personal.website}>{cv.personal.website}</Link>
-          </View>
-          <View style={styles.contactInfoSection}>
-            <Text>GitHub:</Text>
-            <Link src={`https://github.com/${cv.personal.github}`}>
-              github.com/{cv.personal.github}
-            </Link>
-          </View>
-          <View style={styles.contactInfoSection}>
-            <Text>LinkedIn:</Text>
-            <Link src={`https://linkedin.com/in/${cv.personal.linkedin}`}>
-              in/{cv.personal.linkedin}
-            </Link>
+      {photo ? (
+        <Image
+          style={{ width: 80, height: 100, objectFit: "cover" }}
+          src={photo}
+        />
+      ) : null}
+    </View>
+  );
+};
+
+export const CVPdf: React.FC<{ photo: string | null }> = ({ photo }) => {
+  return (
+    <Document>
+      <Page size="A4" style={styles.page}>
+        {/* Header */}
+        <View style={styles.header}>
+          <Hero photo={photo} />
+          <View style={styles.contactInfo}>
+            <View style={styles.contactInfoSection}>
+              <Text>Email:</Text>
+              <Link src={`mailto:${cv.personal.email}`}>
+                <Text>{cv.personal.email}</Text>
+              </Link>
+            </View>
+
+            <View style={styles.contactInfoSection}>
+              <Text>Website:</Text>
+              <Link src={cv.personal.website}>{cv.personal.website}</Link>
+            </View>
+            <View style={styles.contactInfoSection}>
+              <Text>GitHub:</Text>
+              <Link src={`https://github.com/${cv.personal.github}`}>
+                github.com/{cv.personal.github}
+              </Link>
+            </View>
+            <View style={styles.contactInfoSection}>
+              <Text>LinkedIn:</Text>
+              <Link src={`https://linkedin.com/in/${cv.personal.linkedin}`}>
+                in/{cv.personal.linkedin}
+              </Link>
+            </View>
           </View>
         </View>
-      </View>
 
-      {/* Experience */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Experience</Text>
-        {cv.jobs.map((job, index) => (
-          <View key={index} style={styles.jobContainer}>
-            <View style={styles.jobHeader}>
-              <Text style={styles.jobTitle}>{job.title}</Text>
-              <Text style={styles.years}>{job.years}</Text>
-            </View>
-            <Text style={styles.company}>{job.company}</Text>
-            <Text style={styles.description}>
-              {extractTextFromReactNode(job.experience)}
-            </Text>
-          </View>
-        ))}
-      </View>
-    </Page>
-    <Page size="A4" style={styles.page}>
-      {/* Skills */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Skills</Text>
-        <View style={styles.skillsContainer}>
-          {cv.skills.map((skillSet, index) => (
-            <View key={index} style={styles.skillCategory}>
-              <Text style={styles.skillCategoryTitle}>
-                {skillSet.sectionName}
-              </Text>
-              <Text style={styles.skillsList}>
-                {skillSet.skills.join(", ")}
+        {/* Experience */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Experience</Text>
+          {cv.jobs.map((job, index) => (
+            <View key={index} style={styles.jobContainer}>
+              <View style={styles.jobHeader}>
+                <Text style={styles.jobTitle}>{job.title}</Text>
+                <Text style={styles.years}>{job.years}</Text>
+              </View>
+              <Text style={styles.company}>{job.company}</Text>
+              <Text style={styles.description}>
+                {extractTextFromReactNode(job.experience)}
               </Text>
             </View>
           ))}
         </View>
-      </View>
+      </Page>
+      <Page size="A4" style={styles.page}>
+        {/* Skills */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Skills</Text>
+          <View style={styles.skillsContainer}>
+            {cv.skills.map((skillSet, index) => (
+              <View key={index} style={styles.skillCategory}>
+                <Text style={styles.skillCategoryTitle}>
+                  {skillSet.sectionName}
+                </Text>
+                <Text style={styles.skillsList}>
+                  {skillSet.skills.join(", ")}
+                </Text>
+              </View>
+            ))}
+          </View>
+        </View>
 
-      {/* Education */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Education</Text>
-        {cv.education.map((edu, index) => (
-          <View key={index} style={styles.educationItem}>
-            <View style={styles.jobHeader}>
-              <Text style={styles.degree}>{edu.degree}</Text>
-              <Text style={styles.years}>{edu.years}</Text>
+        {/* Education */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Education</Text>
+          {cv.education.map((edu, index) => (
+            <View key={index} style={styles.educationItem}>
+              <View style={styles.jobHeader}>
+                <Text style={styles.degree}>{edu.degree}</Text>
+                <Text style={styles.years}>{edu.years}</Text>
+              </View>
+              <Text style={styles.school}>{edu.school}</Text>
             </View>
-            <Text style={styles.school}>{edu.school}</Text>
-          </View>
-        ))}
-      </View>
+          ))}
+        </View>
 
-      {/* Languages */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Languages</Text>
-        {cv.languages.map((lang, index) => (
-          <View key={index} style={styles.languageContainer}>
-            <Text style={styles.language}>{lang.lang}</Text>
-            <Text style={styles.level}>{lang.level}</Text>
-          </View>
-        ))}
-      </View>
-    </Page>
-  </Document>
-);
+        {/* Languages */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Languages</Text>
+          {cv.languages.map((lang, index) => (
+            <View key={index} style={styles.languageContainer}>
+              <Text style={styles.language}>{lang.lang}</Text>
+              <Text style={styles.level}>{lang.level}</Text>
+            </View>
+          ))}
+        </View>
+      </Page>
+    </Document>
+  );
+};
