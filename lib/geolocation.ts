@@ -13,6 +13,14 @@ export async function getGeolocation(): Promise<GeolocationData> {
   };
 }
 
+export async function usePhotoDisabled() {
+  const { country } = await getGeolocation();
+
+  return ["US", "GB", "IE", "NL", "CA", "AU", "NZ", "SE", "FR"].includes(
+    country,
+  );
+}
+
 export function isValidCountry(country: string): boolean {
   return country !== "Unknown" && country.length > 0;
 }

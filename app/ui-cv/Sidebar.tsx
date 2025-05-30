@@ -4,7 +4,7 @@ import { DownloadCVButton } from "./DownloadCVButton";
 import { Languages } from "./Languages";
 import { ThemeToggle } from "../ui/theme-toggle";
 import { Photo } from "./Photo";
-import { getGeolocation } from "@/lib/geolocation";
+import { usePhotoDisabled } from "@/lib/geolocation";
 
 const SidebarSection = ({
   children,
@@ -17,8 +17,7 @@ const SidebarSection = ({
 };
 
 export const Sidebar = async ({ className }: { className?: string }) => {
-  const geoData = await getGeolocation();
-  const photoDisabled = geoData.country === "RS";
+  const photoDisabled = await usePhotoDisabled();
 
   return (
     <div
