@@ -11,7 +11,10 @@ export const Contacts = () => {
         </Link>
       </p>
       <p>
-        Email: <Link href={cv.personal.email}>{cv.personal.email}</Link>
+        Email:{" "}
+        <Link prefetch={false} href={cv.personal.email}>
+          {cv.personal.email}
+        </Link>
       </p>
       <p>
         Telegram:{" "}
