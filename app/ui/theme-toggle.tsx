@@ -63,10 +63,8 @@ export function ThemeToggle() {
   }
 
   return (
-    <div className="flex h-full">
-      {(["light", "system", "dark"] as const).map((theme, index, arr) => {
-        const first = index === 0;
-        const last = index === arr.length - 1;
+    <div className="flex h-full border border-slate-500 rounded-full overflow-hidden">
+      {(["light", "system", "dark"] as const).map((theme) => {
         return (
           <button
             key={theme}
@@ -74,10 +72,8 @@ export function ThemeToggle() {
             className={clsx(
               "flex h-full aspect-square justify-center items-center transition-colors ",
               {
-                "rounded-r-md": last,
-                "rounded-l-md": first,
-                "text-slate-100 bg-slate-700": theme === currentTheme,
-                "bg-slate-500 text-slate-100 hover:bg-slate-700 ":
+                "text-slate-500 bg-slate-300": theme === currentTheme,
+                "bg-slate-500 text-slate-300 hover:bg-slate-700 ":
                   theme !== currentTheme,
               },
             )}

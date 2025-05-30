@@ -57,7 +57,7 @@ export const Sidebar = async ({ className }: { className?: string }) => {
       </SidebarSection>
 
       <SidebarSection className="flex  flex-col justify-end items-center  flex-grow">
-        <div className="h-10">
+        <div className="h-6">
           <ThemeToggle />
         </div>
       </SidebarSection>
