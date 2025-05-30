@@ -1,3 +1,5 @@
+import React from "react";
+
 const cv: CV = {
   personal: {
     name: "Aleksei Kuzmichev",
