@@ -1,5 +1,12 @@
 import React from "react";
-import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
+import {
+  Document,
+  Page,
+  Text,
+  View,
+  StyleSheet,
+  Link,
+} from "@react-pdf/renderer";
 import cv from "../cvconfig";
 
 const styles = StyleSheet.create({
@@ -37,6 +44,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
     color: "#666666",
   },
+  contactInfoSection: { flexDirection: "row", gap: 4 },
   section: {
     marginBottom: 25,
   },
@@ -157,10 +165,29 @@ export const CVPdf: React.FC = () => (
         <Text style={styles.title}>{cv.personal.title}</Text>
         <Text style={styles.subtitle}>{cv.hero.subtext}</Text>
         <View style={styles.contactInfo}>
-          <Text>Email: {cv.personal.email}</Text>
-          <Text>Website: {cv.personal.website}</Text>
-          <Text>GitHub: github.com/{cv.personal.github}</Text>
-          <Text>LinkedIn: linkedin.com/in/{cv.personal.linkedin}</Text>
+          <View style={styles.contactInfoSection}>
+            <Text>Email:</Text>
+            <Link src={`mailto:${cv.personal.email}`}>
+              <Text>{cv.personal.email}</Text>
+            </Link>
+          </View>
+
+          <View style={styles.contactInfoSection}>
+            <Text>Website:</Text>
+            <Link src={cv.personal.website}>{cv.personal.website}</Link>
+          </View>
+          <View style={styles.contactInfoSection}>
+            <Text>GitHub:</Text>
+            <Link src={`https://github.com/${cv.personal.github}`}>
+              github.com/{cv.personal.github}
+            </Link>
+          </View>
+          <View style={styles.contactInfoSection}>
+            <Text>LinkedIn:</Text>
+            <Link src={`https://linkedin.com/in/${cv.personal.linkedin}`}>
+              in/{cv.personal.linkedin}
+            </Link>
+          </View>
         </View>
       </View>
 

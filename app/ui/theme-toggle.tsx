@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 type Theme = "light" | "dark" | "system";
 
@@ -10,7 +10,7 @@ function getIcon(theme: Theme) {
     case "light":
       return (
         <svg
-          className="w-4 h-4"
+          className="w-1/2 h-1/2"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -22,7 +22,7 @@ function getIcon(theme: Theme) {
     case "dark":
       return (
         <svg
-          className="w-4 h-4"
+          className="w-1/2 h-1/2"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -33,7 +33,7 @@ function getIcon(theme: Theme) {
     case "system":
       return (
         <svg
-          className="w-4 h-4"
+          className="w-1/2 h-1/2"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -82,7 +82,7 @@ export function ThemeToggle() {
   }
 
   return (
-    <div className="flex">
+    <div className="flex h-full">
       {(["light", "system", "dark"] as const).map((theme, index, arr) => {
         const first = index === 0;
         const last = index === arr.length - 1;
@@ -91,7 +91,7 @@ export function ThemeToggle() {
             key={theme}
             onClick={() => setCurrentTheme(theme)}
             className={clsx(
-              "flex aspect-square justify-center items-center transition-colors min-h-10",
+              "flex h-full aspect-square justify-center items-center transition-colors ",
               {
                 "rounded-r-md": last,
                 "rounded-l-md": first,

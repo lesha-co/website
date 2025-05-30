@@ -15,12 +15,12 @@ const SidebarSection = ({
   return <div className={clsx("px-8 w-full", className)}>{children}</div>;
 };
 
-export const Header = ({ className }: { className?: string }) => {
+export const Sidebar = ({ className }: { className?: string }) => {
   return (
     <div
       className={clsx(
         className,
-        "bg-secondary not-lg:hidden py-12 lg:sticky top-0 h-screen flex flex-col items-center gap-12 ",
+        "bg-secondary relative not-lg:hidden py-12 lg:sticky top-0 h-screen flex flex-col items-center gap-12 ",
       )}
     >
       <div className="flex flex-col items-center gap-4  w-8/10">
@@ -49,8 +49,10 @@ export const Header = ({ className }: { className?: string }) => {
         <Languages />
       </SidebarSection>
 
-      <SidebarSection className="flex flex-col justify-end items-center  flex-grow">
-        <ThemeToggle />
+      <SidebarSection className="flex  flex-col justify-end items-center  flex-grow">
+        <div className="h-10">
+          <ThemeToggle />
+        </div>
       </SidebarSection>
     </div>
   );
