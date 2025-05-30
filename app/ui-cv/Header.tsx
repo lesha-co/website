@@ -1,10 +1,9 @@
-import Image from "next/image";
-import cv from "../cvconfig";
 import clsx from "clsx";
 import { Contacts } from "./Contacts";
 import { DownloadCVButton } from "./DownloadCVButton";
 import { Languages } from "./Languages";
 import { ThemeToggle } from "../ui/theme-toggle";
+import { Photo } from "./Photo";
 
 const SidebarSection = ({
   children,
@@ -25,14 +24,7 @@ export const Header = ({ className }: { className?: string }) => {
       )}
     >
       <div className="flex flex-col items-center gap-4  w-8/10">
-        <Image
-          priority
-          alt="My photo"
-          src={cv.personal.photo}
-          width={1200}
-          height={1200}
-          className="bg-black rounded-full"
-        />
+        <Photo />
         <p className="text-xl">That's me.</p>
       </div>
 

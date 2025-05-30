@@ -1,4 +1,5 @@
 import cv from "../cvconfig";
+
 export const HelloBlock = ({ className }: { className?: string }) => {
   return (
     <div className={className}>

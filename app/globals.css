@@ -11,6 +11,7 @@
     --light-button-hover-background: theme(--color-slate-600);
     --light-skill-background: theme(--color-blue-100);
     --light-skill-foreground: theme(--color-blue-500);
+    --light-header: theme(--color-slate-200);
 
     --dark-background: theme(--color-slate-900);
     --dark-foreground: #fafafa;
@@ -22,6 +23,7 @@
     --dark-button-hover-background: theme(--color-slate-500);
     --dark-skill-background: theme(--color-blue-950);
     --dark-skill-foreground: var(--dark-accent);
+    --dark-header: theme(--color-slate-800);
 
     /* Light theme colors */
     --background: var(--light-background);
@@ -34,6 +36,7 @@
     --button-hover-background: var(--light-button-hover-background);
     --skill-background: var(--light-skill-background);
     --skill-foreground: var(--light-skill-foreground);
+    --header: var(--light-header);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,6 +52,7 @@
         --button-hover-background: var(--dark-button-hover-background);
         --skill-background: var(--dark-skill-background);
         --skill-foreground: var(--dark-skill-foreground);
+        --header: var(--dark-header);
     }
 }
 
@@ -63,6 +67,7 @@
     --color-button-hover-background: var(--button-hover-background);
     --color-skill-background: var(--skill-background);
     --color-skill-foreground: var(--skill-foreground);
+    --color-header: var(--header);
 }
 
 /* Manual theme toggle support */
@@ -77,6 +82,7 @@
     --button-hover-background: var(--light-button-hover-background);
     --skill-background: var(--light-skill-background);
     --skill-foreground: var(--light-skill-foreground);
+    --header: var(--light-header);
 }
 
 [data-theme="dark"] {
@@ -90,6 +96,7 @@
     --button-hover-background: var(--dark-button-hover-background);
     --skill-background: var(--dark-skill-background);
     --skill-foreground: var(--dark-skill-foreground);
+    --header: var(--dark-header);
 }
 
 body {

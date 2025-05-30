@@ -9,6 +9,9 @@ import { Languages } from "./ui-cv/Languages";
 import { Contacts } from "./ui-cv/Contacts";
 import { DownloadCVButton } from "./ui-cv/DownloadCVButton";
 import { Header } from "./ui-cv/Header";
+import { OnlyMobile } from "./ui-cv/OnlyMobile";
+import { ThemeToggle } from "./ui/theme-toggle";
+import { Photo } from "./ui-cv/Photo";
 
 const H2 = ({ children }: { children: React.ReactNode }) => (
   <div className="font-bold text-3xl mt-16 mb-3">
@@ -16,43 +19,48 @@ const H2 = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
-const OnlyMobile = ({ children }: { children: React.ReactNode }) => (
-  <div className="lg:hidden">{children}</div>
-);
-
 export default async function Home() {
   return (
-    <div
-      className={clsx(
-        "px-8",
-        "max-w-5xl min-h-screen mx-auto grid gap-x-20",
-        "lg:grid-cols-3 lg:[grid-template-areas:_'hello_hello_header''main_main_header']",
-        "grid-cols-1 [grid-template-areas:_'hello''main']",
-      )}
-    >
-      <Header className="[grid-area:header]" />
-      <HelloBlock className="[grid-area:hello] pt-12" />
-      <div className="[grid-area:main] pb-12">
-        <OnlyMobile>
-          <div className="mt-6 mb-6">
-            <DownloadCVButton />
-          </div>
-        </OnlyMobile>
-        <OnlyMobile>
-          <H2>Contacts</H2>
-          <Contacts />
-        </OnlyMobile>
-        <H2>Recent experience</H2>
-        <Experience />
-        <H2>Education</H2>
-        <Education />
-        <OnlyMobile>
-          <H2>Languages</H2>
-          <Languages />
-        </OnlyMobile>
-        <H2>Skills</H2>
-        <SkillSet />
+    <>
+      <OnlyMobile className="flex justify-between bg-header px-4 py-4 h-20">
+        <div className="overflow-hidden aspect-square">
+          <Photo className="h-full rounded-md" />
+        </div>
+        <ThemeToggle />
+      </OnlyMobile>
+
+      <div
+        className={clsx(
+          "px-8",
+          "max-w-5xl min-h-screen mx-auto grid gap-x-20",
+          "lg:grid-cols-3 lg:[grid-template-areas:_'hello_hello_header''main_main_header']",
+          "grid-cols-1 [grid-template-areas:_'hello''main']",
+        )}
+      >
+        <Header className="[grid-area:header]" />
+        <HelloBlock className="[grid-area:hello] pt-12" />
+        <div className="[grid-area:main] pb-12">
+          <OnlyMobile>
+            <div className="mt-6 mb-6">
+              <DownloadCVButton />
+            </div>
+          </OnlyMobile>
+          <OnlyMobile>
+            <H2>Contacts</H2>
+            <Contacts />
+          </OnlyMobile>
+          <H2>Recent experience</H2>
+          <Experience />
+          <H2>Education</H2>
+          <Education />
+          <OnlyMobile>
+            <H2>Languages</H2>
+            <Languages />
+          </OnlyMobile>
+          <H2>Skills</H2>
+          <SkillSet />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
