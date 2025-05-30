@@ -4,6 +4,7 @@ import { DownloadCVButton } from "./DownloadCVButton";
 import { Languages } from "./Languages";
 import { ThemeToggle } from "../ui/theme-toggle";
 import { Photo } from "./Photo";
+import { getGeolocation } from "@/lib/geolocation";
 
 const SidebarSection = ({
   children,
@@ -15,7 +16,10 @@ const SidebarSection = ({
   return <div className={clsx("px-8 w-full", className)}>{children}</div>;
 };
 
-export const Sidebar = ({ className }: { className?: string }) => {
+export const Sidebar = async ({ className }: { className?: string }) => {
+  const geoData = await getGeolocation();
+  const photoDisabled = geoData.country === "RS";
+
   return (
     <div
       className={clsx(
@@ -23,7 +27,11 @@ export const Sidebar = ({ className }: { className?: string }) => {
         "bg-secondary relative not-lg:hidden py-12 lg:sticky top-0 h-screen flex flex-col items-center gap-12 ",
       )}
     >
-      <div className="flex flex-col items-center gap-4  w-8/10">
+      <div
+        className={clsx("flex flex-col items-center gap-4  w-8/10", {
+          hidden: photoDisabled,
+        })}
+      >
         <Photo />
         <p className="text-xl">That's me.</p>
       </div>

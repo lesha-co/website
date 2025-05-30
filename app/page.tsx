@@ -12,7 +12,6 @@ import { Sidebar } from "./ui-cv/Sidebar";
 import { OnlyMobile } from "./ui-cv/OnlyMobile";
 import { ThemeToggle } from "./ui/theme-toggle";
 import { Photo } from "./ui-cv/Photo";
-// import { getGeolocation } from "@/lib/geolocation";
 
 const H2 = ({ children }: { children: React.ReactNode }) => (
   <div className="font-bold text-3xl mt-16 mb-3">
@@ -21,8 +20,6 @@ const H2 = ({ children }: { children: React.ReactNode }) => (
 );
 
 export default async function Home() {
-  // const geoData = await getGeolocation();
-  // const photoEnabled = geoData.country !== "US";
   return (
     <>
       <OnlyMobile className="flex justify-between bg-header px-8 py-4 h-20">
