@@ -23,7 +23,7 @@ export default async function Home() {
   return (
     <>
       <OnlyMobile className="flex justify-between bg-header px-4 py-4 h-20">
-        <div className="overflow-hidden aspect-square">
+        <div className="h-full aspect-square">
           <Photo className="h-full rounded-md" />
         </div>
         <div className="h-full">
