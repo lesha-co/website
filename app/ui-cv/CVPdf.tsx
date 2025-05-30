@@ -180,7 +180,8 @@ export const CVPdf: React.FC = () => (
           </View>
         ))}
       </View>
-
+    </Page>
+    <Page size="A4" style={styles.page}>
       {/* Skills */}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Skills</Text>
