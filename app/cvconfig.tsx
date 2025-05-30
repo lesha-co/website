@@ -7,7 +7,7 @@ const cv: CV = {
     telegram: "leshaco",
     github: "lesha-co",
     linkedin: "lesha-co",
-    photo: "/me3.jpg",
+    photo: "/me3-small.jpg",
     photoPdf: "/me3-small.jpg",
   },
   hero: {
