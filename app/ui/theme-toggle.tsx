@@ -21,7 +21,7 @@ function getIcon(theme: Theme) {
       );
     case "system":
       return (
-        <svg className="w-1/2 h-1/2" fill="currentColor" viewBox="6 6 12 12">
+        <svg className="w-1/2 h-1/2" fill="currentColor" viewBox="4 4 16 16">
           {/* <path d="M21,16H3V4H21M21,2H3C1.89,2 1,2.89 1,4V16A2,2 0 0,0 3,18H10V20H8V22H16V20H14V18H21A2,2 0 0,0 23,16V4C23,2.89 22.1,2 21,2Z" /> */}
           <path d="M11,7A2,2 0 0,0 9,9V17H11V13H13V17H15V9A2,2 0 0,0 13,7H11M11,9H13V11H11V9Z" />
         </svg>

@@ -28,7 +28,7 @@ export default async function Home() {
         <div
           className={clsx("h-full aspect-square", { hidden: photoDisabled })}
         >
-          <Photo className="h-full rounded-md" />
+          <Photo className="h-full rounded-full" />
         </div>
         <div className="h-full flex flex-col justify-center">
           <ThemeToggle />
