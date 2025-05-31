@@ -191,17 +191,20 @@ export const CVPdf: React.FC<{ photo: string | null }> = ({ photo }) => {
                 <Text>{cv.personal.email}</Text>
               </Link>
             </View>
+            <View style={styles.contactInfoSection}>
+              <Text>Tel:</Text>
+              <Link src={`tel:${cv.personal.phone.replaceAll(" ", "")}`}>
+                {cv.personal.phone}
+              </Link>
+            </View>
 
             <View style={styles.contactInfoSection}>
               <Text>Website:</Text>
-              <Link src={cv.personal.website}>{cv.personal.website}</Link>
-            </View>
-            <View style={styles.contactInfoSection}>
-              <Text>GitHub:</Text>
-              <Link src={`https://github.com/${cv.personal.github}`}>
-                github.com/{cv.personal.github}
+              <Link src={cv.personal.website}>
+                {new URL(cv.personal.website).hostname}
               </Link>
             </View>
+
             <View style={styles.contactInfoSection}>
               <Text>LinkedIn:</Text>
               <Link src={`https://linkedin.com/in/${cv.personal.linkedin}`}>

@@ -11,6 +11,7 @@ const cv: CV = {
     linkedin: "lesha-co",
     photo: "/me3-small.jpg",
     photoPdf: "/me3-small.jpg",
+    phone: "+381 63 8206 174",
   },
   hero: {
     h1: "I build web applications",

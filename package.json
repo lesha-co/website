@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "predev": "tsx scripts/build-pdfs.tsx",
     "prebuild": "tsx scripts/build-pdfs.tsx",
     "build": "next build",
     "start": "next start",

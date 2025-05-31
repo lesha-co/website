@@ -29,6 +29,7 @@ type CV = {
     linkedin: string;
     github: string;
     telegram: string;
+    phone: string;
   };
   hero: {
     h1: string;
