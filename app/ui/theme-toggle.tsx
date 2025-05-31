@@ -21,9 +21,18 @@ function getIcon(theme: Theme) {
       );
     case "system":
       return (
-        <svg className="w-1/2 h-1/2" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M21,16H3V4H21M21,2H3C1.89,2 1,2.89 1,4V16A2,2 0 0,0 3,18H10V20H8V22H16V20H14V18H21A2,2 0 0,0 23,16V4C23,2.89 22.1,2 21,2Z" />
+        <svg className="w-1/2 h-1/2" fill="currentColor" viewBox="6 6 12 12">
+          {/* <path d="M21,16H3V4H21M21,2H3C1.89,2 1,2.89 1,4V16A2,2 0 0,0 3,18H10V20H8V22H16V20H14V18H21A2,2 0 0,0 23,16V4C23,2.89 22.1,2 21,2Z" /> */}
+          <path d="M11,7A2,2 0 0,0 9,9V17H11V13H13V17H15V9A2,2 0 0,0 13,7H11M11,9H13V11H11V9Z" />
         </svg>
+        // <svg
+        //   className="w-1/2 h-1/2"
+        //   fill="currentColor"
+        //   xmlns="http://www.w3.org/2000/svg"
+        //   viewBox="0 0 24 24"
+        // >
+        //   <path d="M7.5,2C5.71,3.15 4.5,5.18 4.5,7.5C4.5,9.82 5.71,11.85 7.53,13C4.46,13 2,10.54 2,7.5A5.5,5.5 0 0,1 7.5,2M19.07,3.5L20.5,4.93L4.93,20.5L3.5,19.07L19.07,3.5M12.89,5.93L11.41,5L9.97,6L10.39,4.3L9,3.24L10.75,3.12L11.33,1.47L12,3.1L13.73,3.13L12.38,4.26L12.89,5.93M9.59,9.54L8.43,8.81L7.31,9.59L7.65,8.27L6.56,7.44L7.92,7.35L8.37,6.06L8.88,7.33L10.24,7.36L9.19,8.23L9.59,9.54M19,13.5A5.5,5.5 0 0,1 13.5,19C12.28,19 11.15,18.6 10.24,17.93L17.93,10.24C18.6,11.15 19,12.28 19,13.5M14.6,20.08L17.37,18.93L17.13,22.28L14.6,20.08M18.93,17.38L20.08,14.61L22.28,17.15L18.93,17.38M20.08,12.42L18.94,9.64L22.28,9.88L20.08,12.42M9.63,18.93L12.4,20.08L9.87,22.27L9.63,18.93Z" />
+        // </svg>
       );
   }
 }
@@ -63,17 +72,18 @@ export function ThemeToggle() {
   }
 
   return (
-    <div className="flex h-full border border-slate-500 rounded-full overflow-hidden">
-      {(["light", "system", "dark"] as const).map((theme) => {
+    <div className="flex h-full bg-slate-500 rounded-full overflow-hidden p-1 gap-1">
+      {(["system", "light", "dark"] as const).map((theme) => {
         return (
           <button
             key={theme}
+            title={`Switch to ${theme} theme`}
             onClick={() => setCurrentTheme(theme)}
             className={clsx(
-              "flex h-full aspect-square justify-center items-center transition-colors ",
+              "flex h-full rounded-full aspect-square justify-center items-center transition-colors ",
               {
                 "text-slate-500 bg-slate-300": theme === currentTheme,
-                "bg-slate-500 text-slate-300 hover:bg-slate-700 ":
+                "bg-slate-500 text-slate-300 hover:bg-slate-400 ":
                   theme !== currentTheme,
               },
             )}
@@ -100,11 +110,7 @@ export function useTheme() {
     const updateResolvedTheme = () => {
       const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       setResolvedTheme(
-        theme === "system"
-          ? isDark
-            ? "dark"
-            : "light"
-          : (theme as "light" | "dark"),
+        theme === "system" ? (isDark ? "dark" : "light") : theme,
       );
     };
 
