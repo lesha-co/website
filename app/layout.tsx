@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import cv from "./cvconfig";
 import { DocumentThemeSelectorScript } from "./ui/DocumentThemeSelectorScript";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   title: cv.personal.name,
   description: cv.hero.subtext,
   icons: {
-    icon: '/favicon.png',
+    icon: "/favicon.png",
   },
 };
 
@@ -29,6 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <Analytics />
       <head>
         <meta name="darkreader-lock" />
         <DocumentThemeSelectorScript />
