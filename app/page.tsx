@@ -13,6 +13,7 @@ import { OnlyMobile } from "./ui-cv/OnlyMobile";
 import { ThemeToggle } from "./ui/theme-toggle";
 import { Photo } from "./ui-cv/Photo";
 import { usePhotoDisabled } from "@/lib/geolocation";
+import { Status } from "./ui-cv/Status";
 
 const H2 = ({ children }: { children: React.ReactNode }) => (
   <div className="font-bold text-3xl mt-16 mb-3">
@@ -53,7 +54,7 @@ export default async function Home() {
           </OnlyMobile>
           <OnlyMobile>
             <H2>Contacts</H2>
-            <Contacts />
+            <Contacts className="grid gap-x-4 grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))]" />
           </OnlyMobile>
           <H2>Recent experience</H2>
           <Experience />
@@ -65,6 +66,8 @@ export default async function Home() {
           </OnlyMobile>
           <H2>Skills</H2>
           <SkillSet />
+          <H2>Status</H2>
+          <Status />
         </div>
       </div>
     </>

@@ -34,10 +34,8 @@ export const Sidebar = async ({ className }: { className?: string }) => {
         <Photo />
         <p className="text-xl">That's me.</p>
       </div>
-
-      <SidebarSection>
-        <p>Current location: Belgrade, Serbia</p>
-        <p>Nationality: Russian</p>
+      <SidebarSection className="not-lg:hidden text-center">
+        <DownloadCVButton />
       </SidebarSection>
       <SidebarSection className="not-lg:hidden">
         <span className="font-bold text-xl">
@@ -46,9 +44,6 @@ export const Sidebar = async ({ className }: { className?: string }) => {
         <Contacts />
       </SidebarSection>
 
-      <SidebarSection className="not-lg:hidden">
-        <DownloadCVButton />
-      </SidebarSection>
       <SidebarSection className="not-lg:hidden">
         <span className="font-bold text-xl">
           <h3>Languages</h3>

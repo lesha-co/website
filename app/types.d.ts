@@ -38,6 +38,7 @@ type CV = {
   skills: { sectionName: string; skills: string[]; wide?: boolean }[];
   languages: Language[];
   education: Education[];
+  status: React.ReactNode;
 };
 
 type LocalizedString =

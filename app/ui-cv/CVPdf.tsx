@@ -9,7 +9,6 @@ import {
   Link,
 } from "@react-pdf/renderer";
 import cv from "../cvconfig";
-import { wrap } from "trough";
 
 const styles = StyleSheet.create({
   page: {
@@ -192,7 +191,7 @@ export const CVPdf: React.FC<{ photo: string | null }> = ({ photo }) => {
               </Link>
             </View>
             <View style={styles.contactInfoSection}>
-              <Text>Tel:</Text>
+              <Text>Phone:</Text>
               <Link src={`tel:${cv.personal.phone.replaceAll(" ", "")}`}>
                 {cv.personal.phone}
               </Link>
@@ -272,6 +271,14 @@ export const CVPdf: React.FC<{ photo: string | null }> = ({ photo }) => {
               <Text style={styles.level}>{lang.level}</Text>
             </View>
           ))}
+        </View>
+
+        {/* Status */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Statxxxus</Text>
+          <Text style={styles.description}>
+            {extractTextFromReactNode(cv.status)}
+          </Text>
         </View>
       </Page>
     </Document>
