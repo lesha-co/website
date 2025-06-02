@@ -35,7 +35,7 @@ async function generatePDFs() {
 
   try {
     // Ensure output directory exists
-    const outputDir = join(process.cwd(), "public", "generated");
+    const outputDir = join(process.cwd(), "public", "cv");
     mkdirSync(outputDir, { recursive: true });
 
     localizations.map(async (localization) => {
