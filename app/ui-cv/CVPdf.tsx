@@ -227,7 +227,12 @@ export const CVPdf: React.FC<{
                 <Text style={styles.jobTitle}>{job.title}</Text>
                 <Text style={styles.years}>{job.years}</Text>
               </View>
-              <Text style={styles.company}>{job.company}</Text>
+              <View style={{ flexDirection: "row", gap: 10 }}>
+                <Text style={styles.company}>{job.company}</Text>
+                <Link style={styles.company} src={job.url}>
+                  {job.url}
+                </Link>
+              </View>
               <Text style={styles.description}>
                 {extractTextFromReactNode(job.experience)}
               </Text>

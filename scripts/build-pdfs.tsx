@@ -40,6 +40,7 @@ async function generatePDFs() {
 
     localizations.map(async (localization) => {
       const cv = useLocalizedObject(cvConfig, localization);
+      useLocalizedObject(cvConfig, localization);
       const name = cv.personal.name.replaceAll(" ", "_");
 
       // Generate PDF with photo

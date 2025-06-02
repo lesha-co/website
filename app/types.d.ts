@@ -1,14 +1,14 @@
 type Job = {
-  title: string;
+  title: LocalizedString;
   company: string;
   url: string;
-  years: string;
+  years: LocalizedString;
   experience: React.ReactElement;
 };
 
 type Education = {
-  degree: string;
-  school: string;
+  degree: LocalizedString;
+  school: LocalizedString;
   years: string;
 };
 
@@ -38,7 +38,7 @@ type CV = {
     h1: LocalizedString;
     subtext: LocalizedString;
   };
-  skills: { sectionName: string; skills: string[]; wide?: boolean }[];
+  skills: { sectionName: LocalizedString; skills: string[]; wide?: boolean }[];
   languages: Language[];
   education: Education[];
   status: React.ReactElement;

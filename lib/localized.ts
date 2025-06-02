@@ -32,9 +32,10 @@ function isObjectWithKeysAndValues(value: any) {
 
 export function useLocalizedObject<T>(
   obj: T,
-  localization: Localization,
+  localization: Localization
 ): LocalizedObject<T> {
   const newObj: any = {};
+  if (typeof obj === "string") return obj as LocalizedObject<T>;
   for (const key in obj) {
     const value = obj[key];
     if (isLocalizedString(value)) {
@@ -52,3 +53,5 @@ export function useLocalizedObject<T>(
 
   return newObj as LocalizedObject<T>;
 }
+
+type x = LocalizedObject<string>;

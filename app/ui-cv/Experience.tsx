@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Years } from "./Years";
 import { Title } from "./Title";
-import cv from "../cvconfig";
+import { useCV } from "@/lib/useCV";
 
-export const Experience = () => {
+export const Experience = async () => {
+  const cv = await useCV();
   return (
     <ul className="flex flex-col gap-8">
       {cv.jobs.map((job, index) => (

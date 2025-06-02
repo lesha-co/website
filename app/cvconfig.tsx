@@ -98,7 +98,10 @@ const cv: CV = {
       title: "Frontend Developer",
       company: "AdsAdvisor (MY.Games)",
       url: "https://adsadvisor.io/",
-      years: "November 2018 – Present",
+      years: {
+        en: "November 2018 – Present",
+        ru: "Ноябрь 2018 – настоящее время",
+      },
       experience: (
         <>
           <p>
@@ -120,7 +123,10 @@ const cv: CV = {
       title: "Frontend Developer",
       company: "Yandex.Market",
       url: "https://yandex.com/company/",
-      years: "April 2017 – November 2018",
+      years: {
+        en: "April 2017 – November 2018",
+        ru: "Апрель 2017 – Ноябрь 2018",
+      },
       experience: (
         <>
           <p>
@@ -143,7 +149,10 @@ const cv: CV = {
       title: "Frontend Developer",
       company: "eNano",
       url: "https://edunano.ru/",
-      years: "December 2013  – April 2017",
+      years: {
+        en: "December 2013 – April 2017",
+        ru: "Декабрь 2013 – Апрель 2017",
+      },
       experience: (
         <>
           <p>Was a full stack developer in a small company.</p>
@@ -158,14 +167,25 @@ const cv: CV = {
     },
   ],
   languages: [
-    { lang: "English", level: "Conversational" },
-    { lang: "Russian", level: "Native" },
+    {
+      lang: { en: "English", ru: "Английский" },
+      level: { en: "Conversational", ru: "Разговорный" },
+    },
+    {
+      lang: { en: "Russian", ru: "Русский" },
+      level: { en: "Native", ru: "Родной" },
+    },
   ],
   education: [
     {
-      degree: "B.S. in Computer Science",
-      school:
-        "Russian State Agrarian University - Moscow Timiryazev Agricultural Academy",
+      degree: {
+        en: "B.S. in Computer Science",
+        ru: "Бакалавр — Информационные системы и технологии",
+      },
+      school: {
+        en: "Russian State Agrarian University - Moscow Timiryazev Agricultural Academy",
+        ru: "Российский Государственный Аграрный Университет - МСХА имени К.А. Тимирязева",
+      },
       years: "2020 – 2025",
     },
   ],

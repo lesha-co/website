@@ -1,5 +1,3 @@
-import { NextResponse } from "next/server";
-
 import { usePhotoDisabled } from "@/lib/geolocation";
 import { useCV } from "@/lib/useCV";
 import { redirect } from "next/navigation";
