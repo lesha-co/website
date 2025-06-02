@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import cv from "../cvconfig";
+
 import { Skills } from "./Skills";
 
 export const SkillSet = () => {

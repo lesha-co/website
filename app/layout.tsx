@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import cv from "./cvconfig";
+
 import { DocumentThemeSelectorScript } from "./ui/DocumentThemeSelectorScript";
 import { Analytics } from "@vercel/analytics/next";
+import { useCV } from "@/lib/useCV";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,13 +16,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: cv.personal.name,
-  description: cv.hero.subtext,
-  icons: {
-    icon: "/favicon.png",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const cv = await useCV();
+  return {
+    title: cv.personal.name,
+    description: cv.hero.subtext,
+    icons: {
+      icon: "/favicon.png",
+    },
+  };
+}
 
 export default function RootLayout({
   children,

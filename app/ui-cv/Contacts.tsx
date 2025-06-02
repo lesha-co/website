@@ -1,5 +1,5 @@
+import { useCV } from "@/lib/useCV";
 import Link from "next/link";
-import cv from "../cvconfig";
 
 const emailIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -43,7 +43,9 @@ const phone = (
   </svg>
 );
 
-export const Contacts2 = () => {
+export const Contacts2 = async () => {
+  const cv = await useCV();
+
   <div>
     <p>
       Email:{" "}
@@ -72,7 +74,10 @@ export const Contacts2 = () => {
   </div>;
 };
 
-export const Contacts: React.FC<{ className?: string }> = ({ className }) => {
+export const Contacts: React.FC<{ className?: string }> = async ({
+  className,
+}) => {
+  const cv = await useCV();
   return (
     <div className={className}>
       <p>
