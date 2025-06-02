@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const cv: CV = {
@@ -96,8 +97,8 @@ const cv: CV = {
   jobs: [
     {
       title: "Frontend Developer",
-      company: "AdsAdvisor (MY.Games)",
-      url: "https://adsadvisor.io/",
+      company: "MY.GAMES",
+      url: "https://my.games/",
       years: {
         en: "November 2018 – Present",
         ru: "Ноябрь 2018 – настоящее время",
@@ -106,10 +107,12 @@ const cv: CV = {
         <>
           <p>
             Currently I'm working in a team that develops a B2B SaaS BI
-            application suite that automates marketing asset management,
-            storage, and publishing, significantly simplifying the daily
-            routines of creative teams. I understood the complexity of
-            applications we develop and suggested migrating to TypeScript.
+            application suite (
+            <Link href="https://adsadvisor.io/">AdsAdvisor</Link>) that
+            automates marketing asset management, storage, and publishing,
+            significantly simplifying the daily routines of creative teams. I
+            understood the complexity of applications we develop and suggested
+            migrating to TypeScript.
           </p>
           <p>
             It took a while but paid back in full. This significantly reduced
