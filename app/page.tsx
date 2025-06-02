@@ -14,6 +14,23 @@ import { ThemeToggle } from "./ui/theme-toggle";
 import { Photo } from "./ui-cv/Photo";
 import { usePhotoDisabled } from "@/lib/geolocation";
 import { Status } from "./ui-cv/Status";
+import { useCV } from "@/lib/useCV";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const cv = await useCV();
+  return {
+    title: cv.personal.name,
+    description: cv.hero.subtext,
+    icons: {
+      icon: "/favicon.png",
+    },
+    openGraph: {
+      title: cv.personal.name,
+      description: cv.hero.subtext,
+    },
+  };
+}
 
 const H2 = ({ children }: { children: React.ReactNode }) => (
   <div className="font-bold text-3xl mt-16 mb-3">

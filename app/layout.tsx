@@ -16,17 +16,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export async function generateMetadata(): Promise<Metadata> {
-  const cv = await useCV();
-  return {
-    title: cv.personal.name,
-    description: cv.hero.subtext,
-    icons: {
-      icon: "/favicon.png",
-    },
-  };
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
