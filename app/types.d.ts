@@ -17,13 +17,15 @@ type Language = {
   level: string;
 };
 
+type LocalizedString = string | { en: string; ru: string };
+
 type CV = {
   jobs: Job[];
   personal: {
-    name: string;
+    name: LocalizedString;
     photo: string;
     photoPdf: string;
-    title: string;
+    title: LocalizedString;
     email: string;
     website: string;
     linkedin: string;
@@ -32,8 +34,8 @@ type CV = {
     phone: string;
   };
   hero: {
-    h1: string;
-    subtext: string;
+    h1: LocalizedString;
+    subtext: LocalizedString;
   };
   skills: { sectionName: string; skills: string[]; wide?: boolean }[];
   languages: Language[];

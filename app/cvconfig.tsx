@@ -2,8 +2,8 @@ import React from "react";
 
 const cv: CV = {
   personal: {
-    name: "Aleksei Kuzmichev",
-    title: "Frontend Developer",
+    name: { en: "Aleksei Kuzmichev", ru: "Алексей Кузмичев" },
+    title: { en: "Frontend Developer", ru: "Фронтенд-разработчик" },
     email: "hi@lesha.co",
     website: "https://lesha.co/",
     telegram: "leshaco",
@@ -14,9 +14,11 @@ const cv: CV = {
     phone: "+381 63 8206 174",
   },
   hero: {
-    h1: "I build web applications",
-    subtext:
-      "Expert in web development. Skilled in React.js, Next.js, and a variety of web technologies with 12 years of experience in commercial development.",
+    h1: { en: "I build web applications", ru: "Я создаю веб-приложения" },
+    subtext: {
+      en: "Expert in web development. Skilled in React.js, Next.js, and a variety of web technologies with 12 years of experience in commercial development.",
+      ru: "Эксперт в веб-разработке. Знание React.js, Next.js и различных веб-технологий с опытом работы в коммерческой разработке более 12 лет.",
+    },
   },
   skills: [
     {
