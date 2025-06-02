@@ -8,14 +8,13 @@ import {
   StyleSheet,
   Link,
 } from "@react-pdf/renderer";
-import cv from "../cvconfig";
 
 const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
     backgroundColor: "#ffffff",
     padding: 40,
-    fontFamily: "Helvetica",
+    fontFamily: "Geist",
   },
   header: {
     marginBottom: 30,
@@ -157,7 +156,10 @@ const extractTextFromReactNode = (node: React.ReactNode): string => {
   return "";
 };
 
-const Hero: React.FC<{ photo: string | null }> = ({ photo }) => {
+const Hero: React.FC<{ photo: string | null; cv: LocalizedObject<CV> }> = ({
+  photo,
+  cv,
+}) => {
   return (
     <View style={{ flexDirection: "row", gap: 20, alignItems: "flex-start" }}>
       <View style={{ flex: 1 }}>
@@ -176,13 +178,16 @@ const Hero: React.FC<{ photo: string | null }> = ({ photo }) => {
   );
 };
 
-export const CVPdf: React.FC<{ photo: string | null }> = ({ photo }) => {
+export const CVPdf: React.FC<{
+  photo: string | null;
+  cv: LocalizedObject<CV>;
+}> = ({ photo, cv }) => {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
         {/* Header */}
         <View style={styles.header}>
-          <Hero photo={photo} />
+          <Hero photo={photo} cv={cv} />
           <View style={styles.contactInfo}>
             <View style={styles.contactInfoSection}>
               <Text>Email:</Text>
@@ -275,7 +280,7 @@ export const CVPdf: React.FC<{ photo: string | null }> = ({ photo }) => {
 
         {/* Status */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Statxxxus</Text>
+          <Text style={styles.sectionTitle}>Status</Text>
           <Text style={styles.description}>
             {extractTextFromReactNode(cv.status)}
           </Text>

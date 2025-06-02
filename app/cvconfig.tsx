@@ -11,7 +11,7 @@ const cv: CV = {
     linkedin: "lesha-co",
     photo: "/me3-small.jpg",
     photoPdf: "/me3-small.jpg",
-    phone: "+381 63 8206 174",
+    phone: { en: "+381 63 8206 174", ru: "+7 967 136 1079" },
   },
   hero: {
     h1: { en: "I build web applications", ru: "Я создаю веб-приложения" },
@@ -98,7 +98,7 @@ const cv: CV = {
       title: "Frontend Developer",
       company: "AdsAdvisor (MY.Games)",
       url: "https://adsadvisor.io/",
-      years: "2018 – 2025",
+      years: "November 2018 – Present",
       experience: (
         <>
           <p>
@@ -120,7 +120,7 @@ const cv: CV = {
       title: "Frontend Developer",
       company: "Yandex.Market",
       url: "https://yandex.com/company/",
-      years: "2017 – 2018",
+      years: "April 2017 – November 2018",
       experience: (
         <>
           <p>
@@ -143,7 +143,7 @@ const cv: CV = {
       title: "Frontend Developer",
       company: "eNano",
       url: "https://edunano.ru/",
-      years: "2013 – 2017",
+      years: "December 2013  – April 2017",
       experience: (
         <>
           <p>Was a full stack developer in a small company.</p>

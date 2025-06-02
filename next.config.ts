@@ -19,8 +19,8 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/cv',
-        destination: '/cv.pdf',
+        source: "/cv.pdf",
+        destination: "/cv",
         permanent: true,
       },
     ];

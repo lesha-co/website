@@ -21,6 +21,11 @@ export async function usePhotoDisabled() {
   );
 }
 
+export async function useLanguage(): Promise<Localization> {
+  const { country } = await getGeolocation();
+  return ["RU"].includes(country) ? "ru" : "en";
+}
+
 export function isValidCountry(country: string): boolean {
   return country !== "Unknown" && country.length > 0;
 }

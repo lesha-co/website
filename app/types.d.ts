@@ -3,7 +3,7 @@ type Job = {
   company: string;
   url: string;
   years: string;
-  experience: React.ReactNode;
+  experience: React.ReactElement;
 };
 
 type Education = {
@@ -13,11 +13,12 @@ type Education = {
 };
 
 type Language = {
-  lang: string;
-  level: string;
+  lang: LocalizedString;
+  level: LocalizedString;
 };
 
-type LocalizedString = string | { en: string; ru: string };
+type Localization = "en" | "ru";
+type LocalizedString = string | Record<Localization, string>;
 
 type CV = {
   jobs: Job[];
@@ -31,7 +32,7 @@ type CV = {
     linkedin: string;
     github: string;
     telegram: string;
-    phone: string;
+    phone: LocalizedString;
   };
   hero: {
     h1: LocalizedString;
@@ -40,12 +41,13 @@ type CV = {
   skills: { sectionName: string; skills: string[]; wide?: boolean }[];
   languages: Language[];
   education: Education[];
-  status: React.ReactNode;
+  status: React.ReactElement;
 };
 
-type LocalizedString =
-  | {
-      en: string;
-      ru: string;
-    }
-  | string;
+type LocalizedObject<T> = {
+  [K in keyof T]: T[K] extends LocalizedString
+    ? string
+    : T[K] extends React.ReactElement
+      ? string
+      : LocalizedObject<T[K]>;
+};
