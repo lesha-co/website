@@ -284,12 +284,6 @@ export const CVPdf: React.FC<{
         </View>
 
         {/* Status */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Status</Text>
-          <Text style={styles.description}>
-            {extractTextFromReactNode(cv.status)}
-          </Text>
-        </View>
       </Page>
     </Document>
   );

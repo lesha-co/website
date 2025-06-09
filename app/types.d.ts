@@ -41,7 +41,6 @@ type CV = {
   skills: { sectionName: LocalizedString; skills: string[]; wide?: boolean }[];
   languages: Language[];
   education: Education[];
-  status: React.ReactElement;
 };
 
 type LocalizedObject<T> = {

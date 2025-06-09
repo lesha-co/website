@@ -83,8 +83,6 @@ export default async function Home() {
           </OnlyMobile>
           <H2>Skills</H2>
           <SkillSet />
-          <H2>Status</H2>
-          <Status />
         </div>
       </div>
     </>

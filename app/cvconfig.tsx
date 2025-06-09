@@ -195,12 +195,6 @@ const cv: CV = {
       years: "2020 – 2025",
     },
   ],
-  status: (
-    <>
-      <strong>Russian</strong> national, currently living in{" "}
-      <strong>Serbia</strong>
-    </>
-  ),
 };
 export default cv;
 
