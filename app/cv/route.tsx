@@ -28,7 +28,7 @@ async function servePDF(cv: LocalizedObject<CV>, photo: boolean) {
 export async function GET() {
   const cv = await useCV();
   const photoDisabled = await usePhotoDisabled();
-
+  console.log(process.env.NODE_ENV);
   if (process.env.NODE_ENV === "development") {
     return servePDF(cv, !photoDisabled);
   }
