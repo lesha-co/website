@@ -8,12 +8,11 @@ import { Languages } from "./ui-cv/Languages";
 
 import { Contacts } from "./ui-cv/Contacts";
 import { DownloadCVButton } from "./ui-cv/DownloadCVButton";
-import { Sidebar } from "./ui-cv/Sidebar";
+import { CVSidebar } from "./ui-cv/CVSidebar";
 import { OnlyMobile } from "./ui-cv/OnlyMobile";
 import { ThemeToggle } from "./ui/theme-toggle";
-import { Photo } from "./ui-cv/Photo";
+import { Photo } from "./ui/Photo";
 import { usePhotoDisabled } from "@/lib/geolocation";
-import { Status } from "./ui-cv/Status";
 import { useCV } from "@/lib/useCV";
 import { Metadata } from "next";
 
@@ -61,7 +60,7 @@ export default async function Home() {
           "grid-cols-1 [grid-template-areas:_'hello''main']",
         )}
       >
-        <Sidebar className="[grid-area:header]" />
+        <CVSidebar className="[grid-area:header]" />
         <HelloBlock className="[grid-area:hello] pt-12" />
         <div className="[grid-area:main] pb-12">
           <OnlyMobile>
