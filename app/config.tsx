@@ -99,17 +99,26 @@ const config: WebsiteConfig = {
   jobs: [
     {
       title: "Frontend Developer",
+      company: "Acumatica",
+      url: "https://acumatica.com/",
+      years: {
+        en: "August 2025 – present",
+        ru: "Август 2025 – настоящее время",
+      },
+      experience: <></>,
+    },
+    {
+      title: "Frontend Developer",
       company: "MY.GAMES",
       url: "https://my.games/",
       years: {
-        en: "November 2018 – Present",
-        ru: "Ноябрь 2018 – настоящее время",
+        en: "November 2018 – May 2025",
+        ru: "Ноябрь 2018 – Май 2025",
       },
       experience: (
         <>
           <p>
-            Currently I'm working in a team that develops a B2B SaaS BI
-            application suite (
+            I worked in a team that develops a B2B SaaS BI application suite (
             <Link href="https://adsadvisor.io/">AdsAdvisor</Link>) that
             automates marketing asset management, storage, and publishing,
             significantly simplifying the daily routines of creative teams. I
