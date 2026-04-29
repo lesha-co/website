@@ -20,7 +20,7 @@ type Language = {
 type Localization = "en" | "ru";
 type LocalizedString = string | Record<Localization, string>;
 
-type CV = {
+type WebsiteConfig = {
   jobs: Job[];
   personal: {
     name: LocalizedString;
@@ -41,6 +41,15 @@ type CV = {
   skills: { sectionName: LocalizedString; skills: string[]; wide?: boolean }[];
   languages: Language[];
   education: Education[];
+  donations: (
+    | { type: "link"; title: LocalizedString; url: string }
+    | {
+        token: LocalizedString;
+        type: "crypto";
+        network?: string;
+        address: string;
+      }
+  )[];
 };
 
 type LocalizedObject<T> = {
