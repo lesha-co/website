@@ -24,7 +24,7 @@ export const CryptoAddress = ({
       <div className="px-2">{title}</div>
       <div className="grow flex gap-2">
         <div className="text-primary p-2 bg-background rounded-lg">
-          <QRcode value={address} width={96} />
+          <QRcode value={address} width={128} />
         </div>
         <code className="text-sm grow break-all bg-background rounded-lg p-2 select-all cursor-pointer border border-secondary">
           {address}
