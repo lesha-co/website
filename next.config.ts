@@ -15,16 +15,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  // Configure redirects
-  async redirects() {
-    return [
-      {
-        source: "/cv.pdf",
-        destination: "/cv",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 export default nextConfig;

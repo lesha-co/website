@@ -1,7 +1,7 @@
 import Link from "next/link";
+import { useCV } from "@/lib/useCV";
 import { Years } from "./Years";
 import { Title } from "./Title";
-import { useCV } from "@/lib/useCV";
 
 export const Experience = async () => {
   const cv = await useCV();

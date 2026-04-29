@@ -1,6 +1,6 @@
 import React from "react";
 import { renderToBuffer } from "@react-pdf/renderer";
-import { CVPdf } from "../app/ui-cv/CVPdf";
+import { CVPdf } from "../app/cv/CVPdf";
 import * as PDF from "@react-pdf/renderer";
 import { join } from "node:path";
 

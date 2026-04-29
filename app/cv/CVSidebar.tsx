@@ -2,11 +2,11 @@ import { Contacts } from "./Contacts";
 import { DownloadCVButton } from "./DownloadCVButton";
 import { Languages } from "./Languages";
 
-import { Sidebar, SidebarSection } from "../ui/Sidebar";
+import { SidebarSection } from "../ui/Sidebar";
 
 export const CVSidebar = async ({ className }: { className?: string }) => {
   return (
-    <Sidebar className={className}>
+    <>
       <SidebarSection className="not-lg:hidden text-center">
         <DownloadCVButton />
       </SidebarSection>
@@ -23,6 +23,6 @@ export const CVSidebar = async ({ className }: { className?: string }) => {
         </span>
         <Languages />
       </SidebarSection>
-    </Sidebar>
+    </>
   );
 };
