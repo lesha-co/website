@@ -1,9 +1,9 @@
 import { usePhotoDisabled } from "@/lib/geolocation";
-import { useCV } from "@/lib/useCV";
+import { useConfig } from "@/lib/useConfig";
 import { redirect } from "next/navigation";
 
 export async function GET() {
-  const cv = await useCV();
+  const cv = await useConfig();
   const photoDisabled = await usePhotoDisabled();
   const name = cv.personal.name.replaceAll(" ", "_");
 

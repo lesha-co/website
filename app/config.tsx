@@ -1,7 +1,6 @@
 import Link from "next/link";
-import React from "react";
 
-const cv: CV = {
+const config: WebsiteConfig = {
   personal: {
     name: { en: "Aleksei Kuzmichev", ru: "Алексей Кузмичев" },
     title: { en: "Frontend Developer", ru: "Фронтенд-разработчик" },
@@ -195,8 +194,32 @@ const cv: CV = {
       years: "2020 – 2025",
     },
   ],
+  donations: [
+    {
+      title: { en: "Patreon", ru: "Патреон" },
+      type: "link",
+      url: "http://patreon.com/leshenka",
+    },
+    {
+      token: "Bitcoin",
+      type: "crypto",
+      address: "bc1q6mcsh43u57qremg8a8h7y70592khhcm9w3achf",
+    },
+    {
+      token: "USDT",
+      network: "Ethereum",
+      type: "crypto",
+      address: "0x424E457E9988F7B1Dede2bBFD61f911be4e67f53",
+    },
+    {
+      token: "USDT",
+      network: "Tron",
+      type: "crypto",
+      address: "TC6A9sQXn67bHex7mJG9YxFeUanptV5Rkn",
+    },
+  ],
 };
-export default cv;
+export default config;
 
 /**
  * Extra skills

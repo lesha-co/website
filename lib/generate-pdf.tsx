@@ -27,7 +27,7 @@ PDF.Font.register({
 });
 
 export async function generatePdf(
-  cv: LocalizedObject<CV>,
+  cv: LocalizedObject<WebsiteConfig>,
 
   photo: boolean,
 ) {

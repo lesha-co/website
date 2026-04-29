@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 import clsx from "clsx";
-import { useCV } from "@/lib/useCV";
+import { useConfig } from "@/lib/useConfig";
 
 export const Photo = async ({ className }: { className?: string }) => {
-  const cv = await useCV();
+  const cv = await useConfig();
   return (
     <Image
       priority

@@ -1,6 +1,6 @@
 import { writeFile, mkdir } from "fs/promises";
 import { join } from "path";
-import cvConfig from "../app/cvconfig";
+import config from "../app/config";
 import { useLocalizedObject } from "../lib/localized";
 import { localizations } from "../lib/localizations";
 import { generatePdf } from "../lib/generate-pdf";
@@ -14,7 +14,7 @@ console.log("🔄 Generating PDF variants...");
     mkdir(outputDir, { recursive: true });
     await Promise.all(
       localizations.flatMap((localization) => {
-        const cv = useLocalizedObject(cvConfig, localization);
+        const cv = useLocalizedObject(config, localization);
         const name = cv.personal.name.replaceAll(" ", "_");
 
         return [

@@ -1,8 +1,8 @@
 import { localized } from "@/lib/localized";
-import { useCV } from "@/lib/useCV";
+import { useConfig } from "@/lib/useConfig";
 
 export const HelloBlock = async () => {
-  const cv = await useCV();
+  const cv = await useConfig();
 
   return (
     <>

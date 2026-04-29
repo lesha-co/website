@@ -156,10 +156,10 @@ const extractTextFromReactNode = (node: React.ReactNode): string => {
   return "";
 };
 
-const Hero: React.FC<{ photo: string | null; cv: LocalizedObject<CV> }> = ({
-  photo,
-  cv,
-}) => {
+const Hero: React.FC<{
+  photo: string | null;
+  cv: LocalizedObject<WebsiteConfig>;
+}> = ({ photo, cv }) => {
   return (
     <View style={{ flexDirection: "row", gap: 20, alignItems: "flex-start" }}>
       <View style={{ flex: 1 }}>
@@ -180,7 +180,7 @@ const Hero: React.FC<{ photo: string | null; cv: LocalizedObject<CV> }> = ({
 
 export const CVPdf: React.FC<{
   photo: string | null;
-  cv: LocalizedObject<CV>;
+  cv: LocalizedObject<WebsiteConfig>;
 }> = ({ photo, cv }) => {
   return (
     <Document>

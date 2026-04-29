@@ -1,4 +1,4 @@
-import { useCV } from "@/lib/useCV";
+import { useConfig } from "@/lib/useConfig";
 import clsx from "clsx";
 import { Metadata } from "next";
 import { Contacts } from "./Contacts";
@@ -12,9 +12,10 @@ import { Experience } from "./Experience";
 import { OnlyMobile } from "../ui/OnlyMobile";
 
 import MainLayout from "../main";
+import { H2 } from "../ui/H2";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const cv = await useCV();
+  const cv = await useConfig();
   return {
     title: cv.personal.name,
     description: cv.hero.subtext,
@@ -27,12 +28,6 @@ export async function generateMetadata(): Promise<Metadata> {
     },
   };
 }
-
-const H2 = ({ children }: { children: React.ReactNode }) => (
-  <div className="font-bold text-3xl mt-16 mb-3">
-    <h2>{children}</h2>
-  </div>
-);
 
 export default async function Home() {
   return (

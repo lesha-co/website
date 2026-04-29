@@ -4,7 +4,7 @@ import "./globals.css";
 
 import { DocumentThemeSelectorScript } from "./ui/DocumentThemeSelectorScript";
 import { Analytics } from "@vercel/analytics/next";
-import { useCV } from "@/lib/useCV";
+import { useConfig } from "@/lib/useConfig";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

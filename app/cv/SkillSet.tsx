@@ -1,10 +1,10 @@
 import clsx from "clsx";
 
 import { Skills } from "./Skills";
-import { useCV } from "@/lib/useCV";
+import { useConfig } from "@/lib/useConfig";
 
 export const SkillSet = async () => {
-  const cv = await useCV();
+  const cv = await useConfig();
   return (
     <div className="grid lg:grid-cols-3 grid-cols-1 gap-5">
       {cv.skills.map((skill) => (

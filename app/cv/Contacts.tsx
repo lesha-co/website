@@ -1,4 +1,4 @@
-import { useCV } from "@/lib/useCV";
+import { useConfig } from "@/lib/useConfig";
 import Link from "next/link";
 
 const emailIcon = (
@@ -44,7 +44,7 @@ const phone = (
 );
 
 export const Contacts2 = async () => {
-  const cv = await useCV();
+  const cv = await useConfig();
 
   <div>
     <p>
@@ -77,7 +77,7 @@ export const Contacts2 = async () => {
 export const Contacts: React.FC<{ className?: string }> = async ({
   className,
 }) => {
-  const cv = await useCV();
+  const cv = await useConfig();
   return (
     <div className={className}>
       <p>

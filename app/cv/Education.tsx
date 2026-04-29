@@ -1,9 +1,9 @@
-import { useCV } from "@/lib/useCV";
+import { useConfig } from "@/lib/useConfig";
 import { Title } from "./Title";
 import { Years } from "./Years";
 
 export const Education = async () => {
-  const cv = await useCV();
+  const cv = await useConfig();
   return (
     <div className="flex flex-col gap-4">
       {cv.education.map((edu) => (
