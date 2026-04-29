@@ -36,7 +36,7 @@ export default async function Home() {
         <div className="flex flex-col gap-6 mt-8">
           <Link
             href="/cv"
-            className="bg-secondary rounded-xl p-6 flex items-center justify-between transition-all duration-200 hover:scale-[1.02]"
+            className="bg-secondary rounded-xl p-6 flex items-center justify-between"
           >
             <div>
               <h2 className="font-bold text-xl">CV</h2>
@@ -48,7 +48,7 @@ export default async function Home() {
           </Link>
           <Link
             href="/donate"
-            className="bg-secondary rounded-xl p-6 flex items-center justify-between transition-all duration-200 hover:scale-[1.02]"
+            className="bg-secondary rounded-xl p-6 flex items-center justify-between"
           >
             <div>
               <h2 className="font-bold text-xl">Donate</h2>

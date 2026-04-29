@@ -24,7 +24,7 @@ export function LinkDonation({ title, href }: { title: string; href: string }) {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="button inline-block text-center px-4 py-2 bg-button-background text-button-foreground hover:bg-button-hover-background rounded-lg transition-colors duration-200"
+        className="button inline-block text-center px-4 py-2 bg-button-background text-button-foreground hover:bg-button-hover-background rounded-lg"
       >
         {title} ↗
       </Link>

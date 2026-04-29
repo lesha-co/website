@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { Photo } from "./ui/Photo";
 import { ThemeToggle } from "./ui/theme-toggle";
 import { Sidebar } from "./ui/Sidebar";
+import Link from "next/link";
 
 export default async function MainLayout({
   hello,
@@ -18,11 +19,13 @@ export default async function MainLayout({
   return (
     <>
       <OnlyMobile className="flex justify-between bg-header px-8 py-4 h-20">
-        <div
-          className={clsx("h-full aspect-square", { hidden: photoDisabled })}
-        >
-          <Photo className="h-full rounded-full" />
-        </div>
+        <Link href="/">
+          <div
+            className={clsx("h-full aspect-square", { hidden: photoDisabled })}
+          >
+            <Photo className="h-full rounded-full" />
+          </div>
+        </Link>
         <div className="h-full flex flex-col justify-center">
           <ThemeToggle />
         </div>
