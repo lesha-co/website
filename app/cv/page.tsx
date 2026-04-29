@@ -1,5 +1,4 @@
 import { useConfig } from "@/lib/useConfig";
-import clsx from "clsx";
 import { Metadata } from "next";
 import { Contacts } from "./Contacts";
 import { CVSidebar } from "./CVSidebar";

@@ -65,23 +65,7 @@ export default async function DonatePage() {
   return (
     <MainLayout
       hello={
-        <div>
-          <div className="mb-4">
-            <Link
-              href="/"
-              className="text-accent hover:underline text-sm inline-flex items-center gap-1"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                className="w-4 h-4"
-                fill="currentColor"
-              >
-                <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
-              </svg>
-              Back to main page
-            </Link>
-          </div>
+        <>
           <div className="font-bold text-4xl mb-2">
             <h1>
               Support my work <HeartIcon />
@@ -92,7 +76,7 @@ export default async function DonatePage() {
             helpful — thank you! Your support helps me keep building and
             sharing.
           </p>
-        </div>
+        </>
       }
       sidebar={<div />}
       main={

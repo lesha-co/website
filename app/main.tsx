@@ -15,14 +15,12 @@ export default async function MainLayout({
   sidebar: React.ReactNode;
   main: React.ReactNode;
 }) {
-  const photoDisabled = await usePhotoDisabled();
+  const hidden = await usePhotoDisabled();
   return (
     <>
       <OnlyMobile className="flex justify-between bg-header px-8 py-4 h-20">
         <Link href="/">
-          <div
-            className={clsx("h-full aspect-square", { hidden: photoDisabled })}
-          >
+          <div className={clsx("h-full aspect-square", { hidden })}>
             <Photo className="h-full rounded-full" />
           </div>
         </Link>
@@ -34,6 +32,7 @@ export default async function MainLayout({
       <div
         className={clsx(
           "px-8",
+          "[grid-template-rows:auto_1fr]",
           "max-w-5xl min-h-screen mx-auto grid gap-x-20",
           "lg:grid-cols-3 lg:[grid-template-areas:_'hello_hello_sidebar''main_main_sidebar']",
           "grid-cols-1 [grid-template-areas:_'hello''main']",

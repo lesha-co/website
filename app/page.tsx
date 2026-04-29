@@ -47,13 +47,13 @@ export default async function Home() {
             <span className="text-accent text-2xl">→</span>
           </Link>
           <Link
-            href="/donate"
+            href="/projects"
             className="bg-secondary rounded-xl p-6 flex items-center justify-between"
           >
             <div>
-              <h2 className="font-bold text-xl">Donate</h2>
+              <h2 className="font-bold text-xl">Projects</h2>
               <p className="text-foreground/70">
-                Support my work if you found it helpful
+                Look what I've been working on in my free time
               </p>
             </div>
             <span className="text-accent text-2xl">→</span>
