@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import MainLayout from "../main";
 import * as qrcode from "qrcode";
+import { CryptoAddress } from "./CryptoAddress";
 
 export async function generateMetadata(): Promise<Metadata> {
   const cv = await useConfig();
@@ -41,7 +42,13 @@ const LinkDonation = ({ title, href }: { title: string; href: string }) => (
   </div>
 );
 
-async function QRcode({ value, width }: { value: string; width: number }) {
+export async function QRcode({
+  value,
+  width,
+}: {
+  value: string;
+  width: number;
+}) {
   const svg = await qrcode.toString(value, {
     color: {
       dark: "#654321",
@@ -56,42 +63,8 @@ async function QRcode({ value, width }: { value: string; width: number }) {
     .replace("#654321", "currentColor")
     .replace("#123456", "transparent");
 
-  return (
-    <div
-      className="text-primary p-2 bg-background rounded-lg"
-      dangerouslySetInnerHTML={{ __html }}
-    />
-  );
+  return <div dangerouslySetInnerHTML={{ __html }} />;
 }
-
-const CryptoAddress = ({
-  name,
-  address,
-  network,
-}: {
-  name: string;
-  address: string;
-  network?: string;
-}) => (
-  <div className="bg-secondary rounded-xl p-4 flex gap-2">
-    <div className="grow flex flex-col gap-2">
-      <div className="flex items-center gap-2">
-        <h3 className="font-bold text-lg">{name}</h3>
-        {network && (
-          <span className="text-xs bg-skill-background text-skill-foreground px-2 py-0.5 rounded-full">
-            {network}
-          </span>
-        )}
-      </div>
-
-      <code className="text-sm grow break-all bg-background rounded-lg p-2 select-all cursor-pointer border border-secondary">
-        {address}
-      </code>
-    </div>
-
-    <QRcode value={address} width={128} />
-  </div>
-);
 
 const HeartIcon = () => (
   <svg
