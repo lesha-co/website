@@ -25,7 +25,7 @@ export const CryptoAddress = async ({
     .replace("#123456", "transparent");
 
   const title = (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-2">
       <h3 className="font-bold text-lg">{name}</h3>
       {network && (
         <span className="text-xs bg-skill-background text-skill-foreground px-2 py-0.5 rounded-full">

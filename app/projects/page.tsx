@@ -26,9 +26,9 @@ const Project = ({
 }) => {
   return (
     <div className="">
-      <h2 className="font-bold text-2xl mb-2">{project.title}</h2>
+      <h2 className="font-bold text-2xl mb-4">{project.title}</h2>
       {"iframe" in project.media && (
-        <div className="overflow-hidden aspect-video">
+        <div className="overflow-hidden aspect-video mb-4">
           <iframe
             className="w-full h-full"
             width="1366"
@@ -42,14 +42,14 @@ const Project = ({
         </div>
       )}
       {"picture" in project.media && (
-        <div className="overflow-hidden aspect-video">
+        <div className="overflow-hidden aspect-video mb-4">
           <img
             className="w-full h-full object-cover"
             src={project.media.picture}
           ></img>
         </div>
       )}
-      <p className="text-lg text-primary">{project.description}</p>
+      <p className="text-lg text-primary mb-4 ">{project.description}</p>
       <Button href={project.url} blank>
         View project
       </Button>
@@ -72,9 +72,13 @@ export default async function Home() {
         </>
       }
       sidebar={<Button href="/support">Support my work</Button>}
-      main={config.projects.map((project) => (
-        <Project key={project.title} project={project} />
-      ))}
+      main={
+        <div className="flex flex-col gap-12">
+          {config.projects.map((project) => (
+            <Project key={project.title} project={project} />
+          ))}
+        </div>
+      }
     />
   );
 }

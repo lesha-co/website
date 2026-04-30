@@ -231,6 +231,11 @@ const config: WebsiteConfig = {
       type: "crypto",
       address: "TC6A9sQXn67bHex7mJG9YxFeUanptV5Rkn",
     },
+    {
+      token: "TON",
+      type: "crypto",
+      address: "UQBPgRYKE9nm2-yoXErjh0VQq1s0JWmaJSbvuoIxI06_cVQq",
+    },
   ],
   projects: [
     {
