@@ -19,16 +19,46 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const ProjectCard = () => {
+const Project = ({
+  project,
+}: {
+  project: LocalizedObject<WebsiteConfig["projects"][number]>;
+}) => {
   return (
-    <div className="bg-card rounded-lg p-4">
-      <h2 className="font-bold text-2xl mb-2"></h2>
-      <p className="text-lg text-foreground/70"></p>
+    <div className="">
+      <h2 className="font-bold text-2xl mb-2">{project.title}</h2>
+      {"iframe" in project.media && (
+        <div className="overflow-hidden aspect-video">
+          <iframe
+            className="w-full h-full"
+            width="1366"
+            height="768"
+            src={project.media.iframe}
+            title="Mod demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
+      )}
+      {"picture" in project.media && (
+        <div className="overflow-hidden aspect-video">
+          <img
+            className="w-full h-full object-cover"
+            src={project.media.picture}
+          ></img>
+        </div>
+      )}
+      <p className="text-lg text-primary">{project.description}</p>
+      <Button href={project.url} blank>
+        View project
+      </Button>
     </div>
   );
 };
 
 export default async function Home() {
+  const config = await useConfig();
   return (
     <MainLayout
       hello={
@@ -42,7 +72,9 @@ export default async function Home() {
         </>
       }
       sidebar={<Button href="/donate">Donate</Button>}
-      main={<>main</>}
+      main={config.projects.map((project) => (
+        <Project key={project.title} project={project} />
+      ))}
     />
   );
 }

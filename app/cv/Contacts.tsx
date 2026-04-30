@@ -43,37 +43,6 @@ const phone = (
   </svg>
 );
 
-export const Contacts2 = async () => {
-  const cv = await useConfig();
-
-  <div>
-    <p>
-      Email:{" "}
-      <Link prefetch={false} href={cv.personal.email}>
-        {cv.personal.email}
-      </Link>
-    </p>
-    <p>
-      Telegram:{" "}
-      <Link href={`https://t.me/${cv.personal.telegram}`}>
-        @{cv.personal.telegram}
-      </Link>
-    </p>
-    <p>
-      GitHub:{" "}
-      <Link href={`https://github.com/${cv.personal.github}`}>
-        {cv.personal.github}
-      </Link>
-    </p>
-    <p>
-      Linkedin:{" "}
-      <Link href={`https://www.linkedin.com/in/${cv.personal.linkedin}`}>
-        in/{cv.personal.linkedin}
-      </Link>
-    </p>
-  </div>;
-};
-
 export const Contacts: React.FC<{ className?: string }> = async ({
   className,
 }) => {
@@ -82,7 +51,7 @@ export const Contacts: React.FC<{ className?: string }> = async ({
     <div className={className}>
       <p>
         Email:{" "}
-        <Link prefetch={false} href={cv.personal.email}>
+        <Link prefetch={false} href={`mailto:${cv.personal.email}`}>
           {cv.personal.email}
         </Link>
       </p>

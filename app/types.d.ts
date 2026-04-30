@@ -50,6 +50,17 @@ type WebsiteConfig = {
         address: string;
       }
   )[];
+  projects: {
+    title: LocalizedString;
+    description: LocalizedString;
+    media:
+      | {
+          iframe: string;
+        }
+      | { picture: string }
+      | {};
+    url: string;
+  }[];
 };
 
 type LocalizedObject<T> = {

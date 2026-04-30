@@ -227,6 +227,50 @@ const config: WebsiteConfig = {
       address: "TC6A9sQXn67bHex7mJG9YxFeUanptV5Rkn",
     },
   ],
+  projects: [
+    {
+      title: "Factorio alerts companion",
+      description:
+        "A companion app for Factorio that displays alerts from the game.",
+      media: {
+        iframe: "https://www.youtube.com/embed/xilCkZWMYpI",
+      },
+      url: "https://github.com/lesha-co/factorio-status-bar-alerts",
+    },
+    {
+      title: "IIS Application Controller",
+      description: "Control databases for IIS applications.",
+      media: {
+        picture: "/blog/iis-app-ctl.png",
+      },
+      url: "https://github.com/lesha-co/iis-app-ctl",
+    },
+    // {
+    //   title: "Multiprotocol VPN",
+    //   description: "",
+    //   media: {
+    //     picture: "",
+    //   },
+    //   url: "https://github.com/lesha-co/multiprotocol-vpn",
+    // },
+    {
+      title: "Cloud18",
+      description: "Subreddit network visualizer.",
+      media: {
+        picture: "/blog/cloud18.png",
+      },
+      url: "https://github.com/lesha-co/cloud18/tree/master",
+    },
+    {
+      title: "tid-guard",
+      description:
+        "A plugin for Tunnelblick that prepends passwords with the OTP code.",
+      media: {
+        picture: "/blog/tid-guard.webp",
+      },
+      url: "https://github.com/lesha-co/tid-guard",
+    },
+  ],
 };
 export default config;
 

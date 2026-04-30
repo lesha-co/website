@@ -1,10 +1,10 @@
 import { useConfig } from "@/lib/useConfig";
 import { Metadata } from "next";
-import Link from "next/link";
 import MainLayout from "../main";
 import * as qrcode from "qrcode";
 import { CryptoAddress } from "./CryptoAddress";
 import { LinkDonation } from "./LinkDonation";
+import { Contacts } from "../cv/Contacts";
 
 export async function generateMetadata(): Promise<Metadata> {
   const cv = await useConfig();
@@ -78,7 +78,11 @@ export default async function DonatePage() {
           </p>
         </>
       }
-      sidebar={<div />}
+      sidebar={
+        <div>
+          <Contacts />
+        </div>
+      }
       main={
         <>
           <H2>Quick and easy</H2>
