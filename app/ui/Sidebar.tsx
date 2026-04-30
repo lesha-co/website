@@ -40,7 +40,7 @@ export const Sidebar = async ({
       {children}
 
       <SidebarSection className="flex  flex-col justify-end items-center  flex-grow">
-        <div className="h-8">
+        <div className="h-12">
           <ThemeToggle />
         </div>
       </SidebarSection>

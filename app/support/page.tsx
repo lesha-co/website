@@ -1,7 +1,6 @@
 import { useConfig } from "@/lib/useConfig";
 import { Metadata } from "next";
 import MainLayout from "../main";
-import * as qrcode from "qrcode";
 import { CryptoAddress } from "./CryptoAddress";
 import { LinkDonation } from "./LinkDonation";
 import { Contacts } from "../cv/Contacts";
@@ -23,30 +22,6 @@ const H2 = ({ children }: { children: React.ReactNode }) => (
     <h2>{children}</h2>
   </div>
 );
-
-export async function QRcode({
-  value,
-  width,
-}: {
-  value: string;
-  width: number;
-}) {
-  const svg = await qrcode.toString(value, {
-    color: {
-      dark: "#654321",
-      light: "#123456",
-    },
-    type: "svg",
-    width,
-    margin: 0,
-  });
-
-  const __html = svg
-    .replace("#654321", "currentColor")
-    .replace("#123456", "transparent");
-
-  return <div dangerouslySetInnerHTML={{ __html }} />;
-}
 
 const HeartIcon = () => (
   <svg
@@ -93,6 +68,7 @@ export default async function DonatePage() {
                   key={d.title + d.url}
                   title={d.title}
                   href={d.url}
+                  icon={d.icon}
                 />
               ) : null,
             )}
@@ -102,7 +78,7 @@ export default async function DonatePage() {
           <p className="text-foreground/70 mb-6">
             Click an address to select it, then copy to your clipboard.
           </p>
-          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+          <div className="grid gap-4 grid-cols-2 sm:grid-cols-3">
             {config.donations.map((d) =>
               "address" in d ? (
                 <CryptoAddress

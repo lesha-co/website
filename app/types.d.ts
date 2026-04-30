@@ -42,7 +42,12 @@ type WebsiteConfig = {
   languages: Language[];
   education: Education[];
   donations: (
-    | { type: "link"; title: LocalizedString; url: string }
+    | {
+        type: "link";
+        title: LocalizedString;
+        url: string;
+        icon?: React.ReactElement;
+      }
     | {
         token: LocalizedString;
         type: "crypto";
@@ -66,7 +71,7 @@ type WebsiteConfig = {
 type LocalizedObject<T> = {
   [K in keyof T]: T[K] extends LocalizedString
     ? string
-    : T[K] extends React.ReactElement
-      ? string
+    : NonNullable<T[K]> extends React.ReactElement
+      ? T[K]
       : LocalizedObject<T[K]>;
 };

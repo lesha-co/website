@@ -71,7 +71,7 @@ export default async function Home() {
           </p>
         </>
       }
-      sidebar={<Button href="/donate">Donate</Button>}
+      sidebar={<Button href="/support">Support my work</Button>}
       main={config.projects.map((project) => (
         <Project key={project.title} project={project} />
       ))}

@@ -34,32 +34,42 @@ export default async function Home() {
       sidebar={<div />}
       main={
         <div className="flex flex-col gap-6 mt-8">
-          <Link
+          <HomeLink
             href="/cv"
-            className="bg-secondary rounded-xl p-6 flex items-center justify-between"
-          >
-            <div>
-              <h2 className="font-bold text-xl">CV</h2>
-              <p className="text-foreground/70">
-                View my experience, skills, and education
-              </p>
-            </div>
-            <span className="text-accent text-2xl">→</span>
-          </Link>
-          <Link
+            title="CV"
+            subtext="View my experience, skills, and education"
+          />
+          <HomeLink
             href="/projects"
-            className="bg-secondary rounded-xl p-6 flex items-center justify-between"
-          >
-            <div>
-              <h2 className="font-bold text-xl">Projects</h2>
-              <p className="text-foreground/70">
-                Look what I've been working on in my free time
-              </p>
-            </div>
-            <span className="text-accent text-2xl">→</span>
-          </Link>
+            title="Projects"
+            subtext="Look what I've been working on in my free time"
+          />
+          <HomeLink href="/support" title="Support" subtext="Support my work" />
         </div>
       }
     />
+  );
+}
+
+function HomeLink({
+  href,
+  title,
+  subtext,
+}: {
+  href: string;
+  title: string;
+  subtext: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="bg-secondary rounded-xl p-6 flex items-center justify-between"
+    >
+      <div>
+        <h2 className="font-bold text-xl">{title}</h2>
+        <p className="text-foreground/70">{subtext}</p>
+      </div>
+      <span className="text-accent text-2xl">→</span>
+    </Link>
   );
 }
