@@ -15,6 +15,15 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/msba",
+        destination: "/blog/factorio-status-bar-alerts",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
